@@ -1,38 +1,742 @@
-.App {
-  text-align: center;
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body, html {
+    font-family: 'Poppins', sans-serif;
+    color: #3d3d3d;
+    background-color: #f6f0f0;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .App {
+    text-align: center;
+  }
+  
+  /* Header */
+  .header {
+    position: fixed; /* Keep the header fixed at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: transform 0.3s ease; /* Smooth transition */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+  }
+  
+  .header.hidden {
+    transform: translateY(-100%); /* Move it up out of view */
+  }
+  
+  .header.visible {
+    transform: translateY(0); /* Move it back into view */
+  }
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%; /* Reduced padding */
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Navigation List */
+  .nav-list {
+    list-style: none;
+    display: flex; 
+    justify-content: space-between; /* Adjusted to space-between for even distribution */
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap; /* Prevent wrapping */
+  }
+  .nav {
+    position: relative;
+  }
+  
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px; /* Width of the hamburger icon */
+    height: 30px; /* Height of the hamburger icon */
+    color: #ff7043(227, 87, 22);
+
+  }
+  
+  .line {
+    height: 4px; /* Thickness of each line */
+    background-color: rgba(0, 0, 0, 0.637); /* Color of the lines */
+    margin: 3px 0; /* Space between the lines */
+    transition: all 0.3s; /* Transition effect */
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 40px; /* Adjust based on your layout */
+    left: 0;
+    background-color: rgba(152, 147, 147, 0.645); /* Background color of the dropdown */
+    border: 1px solid #cccccc9b;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure dropdown is above other elements */
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0; /* Padding for the dropdown */
+  }
+  
+  .dropdown-menu li {
+    padding: 10px;
+  }
+  
+  .dropdown-menu .nav-link {
+    display: block;
+    padding: 10px;
+    color: #ff6f43a0(227, 87, 22); /* Text color */
+    text-decoration: none;
+  }
+  
+  .dropdown-menu .nav-link:hover {
+    background-color: #f0f0f0; /* Hover effect */
+  }
+   /* Header ++ */
+   .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #fff;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .hamburger {
+    display: none; /* Hide hamburger by default */
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .line {
+    height: 3px;
+    width: 25px;
+    background-color: #333;
+    margin: 3px 0;
+  }
+  
+  .nav {
+    display: flex; /* Show nav as flex container */
+  }
+  
+  .nav-list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-link {
+    margin: 0 15px; /* Space between links */
+    text-decoration: none;
+  }
+  
+  /* Media Queries for responsiveness */
+  @media (max-width: 768px) {
+    .nav {
+      display: none; /* Hide full nav on small screens */
+      position: absolute; /* Position dropdown */
+      top: 60px; /* Adjust based on header height */
+      left: 0;
+      width: 100%; /* Full width for dropdown */
+      background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+  
+    .nav.active {
+      display: flex; /* Show dropdown when active */
+      flex-direction: column; /* Stack links */
+    }
+  
+    .hamburger {
+      display: flex; /* Show hamburger on small screens */
+    }
+  }
+  
+  /* Individual Link Style */
+  .nav-link {
+    text-decoration: none;
+    color: #444; 
+    font-size: 1rem; /* Reduced font size */
+    padding: 10px 15px; /* Adjusted padding for balance */
+    margin: 0; 
+    border-radius: 30px; 
+    font-weight: 500; 
+    transition: all 0.3s ease; 
+    position: relative; 
+  }
+  
+  /* Adjust Logo Size */
+  .logo {
+    height: 40px; /* Adjust logo size for better fit */
+  }
+  
+  /* Adjust Logo Text */
+  .logo-text h1 {
+    font-size: 1.5rem; /* Reduced font size */
+  }
+  /* Logo Container */
+.logo-container {
+    display: flex;
+    align-items: center; /* Aligns logo and text vertically */
+  }
+  
+  /* Adjust Logo Size */
+  .logo {
+    height: 50px; /* Set your desired logo height */
+    margin-right: 10px; /* Space between logo and text */
+  }
+  
+  /* Logo Text */
+  .logo-text h1 {
+    font-size: 1.5rem; /* Font size for company name */
+    margin: 0;
+    color: #ffcc29;
+  }
+  
+  .logo-text p {
+    font-size: 0.9rem; /* Font size for subtitle */
+    color: #bbb;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px 5%;
+    background: linear-gradient(90deg, #5c5a5a, #6d666600); /* Smooth gradient for a sleek, professional look */
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Navigation Styles */
+  .nav {
+    /* Add any additional styles you need for the nav */
+  }
+  
+ /* Navigation Styles */
+/* Navigation Container */
+.nav {
+    background: linear-gradient(90deg, #ba2e2e00, #6d666600); /* Smooth gradient for a sleek, professional look */
+    padding: 10px 40px; /* Increased padding for more spacing */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Thinner border for a subtle separation */
+    box-shadow: 0 8px 15px rgba(41, 40, 40, 0.05); /* Slight shadow to add depth */
+    position: sticky; /* Stick to the top when scrolling */
+    top: 0;
+    z-index: 1000; /* Ensures the nav stays above other elements */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Navigation List */
+.nav-list {
+    list-style: none; /* Remove bullet points */
+    display: flex; /* Align items in a row */
+    justify-content: space-around; /* Space links evenly with equal space around them */
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap; /* Allow wrapping if needed on smaller screens */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Individual Link Style */
+.nav-link {
+    text-decoration: none;
+    color: #444; /* Slightly darker grey for contrast */
+    font-size: 1.1rem; /* Increase font size for readability */
+    padding: 12px 20px; /* Increase padding for a more balanced look */
+    margin: 0; /* Remove side margins to avoid uneven spacing */
+    border-radius: 30px; /* Rounded corners for pill-shaped links */
+    font-weight: 500; /* Medium font weight for balance */
+    transition: all 0.3s ease; /* Smooth transitions for hover and focus */
+    position: relative; /* For positioning hover effects */
+}
+
+/* Hover Effect for Links */
+.nav-link::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px; /* Height of the underline effect */
+    background-color: #007bff; /* Blue underline on hover */
+    bottom: -5px; /* Position it just below the link */
+    left: 0;
+    transform: scaleX(0); /* Initially hidden */
+    transform-origin: right; /* Start the animation from the right */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Active Link Style */
+.nav-link.active {
+    color: #007bff; /* Blue color for active link */
+    background-color: rgba(0, 123, 255, 0.2); /* More prominent blue background */
+    font-weight: 700; /* Bolder font for active link */
+    border-bottom: 3px solid #007bff; /* Solid underline for active link */
+}
+
+/* Hover Effect */
+.nav-link:hover {
+    color: #007bff; /* Blue text on hover */
+    background-color: rgba(0, 123, 255, 0.1); /* Light blue background on hover */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.15); /* Soft shadow on hover for depth */
+    font-weight: 600; /* Slightly bolder on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center aligns items */
+        padding: 0; /* Remove padding for smaller screens */
+    }
+
+    .nav-list li {
+        margin: 5px 0; /* Adjust margin for vertical stacking */
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-list li a {
+        font-size: 1rem; /* Slightly smaller font for very small screens */
+        padding: 10px 15px; /* Increased padding for touch targets */
+    }
+
+  
+    .logo {
+      height: 40px; /* Adjust logo size */
+    }
+  }
+  
+  
+  
+  /* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 45vh;
+    background-color: #f7f7f7;
+    margin-top: 0px;
+    overflow: hidden; 
+  }
+  
+  .hero-image-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7); /* Adjusted brightness filter */
+    transition: filter 0.7s ease;
+  }
+  
+  .hero-image:hover {
+    filter: brightness(0.6); /* Adjusted brightness on hover */
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4); /* Adjusted to be less opaque */
+  }
+  
+  .hero-overlay h2 {
+    font-size: 3rem;
+    color: #ffcc29;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 1.5s ease-in-out;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 80%;
+  }
+  .slider-controls {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .slider-dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .slider-dot.active {
+    background-color: rgb(135, 150, 154);
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .hero-overlay h2 {
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-overlay h2 {
+      font-size: 2rem;
+      padding: 0 10px;
+    }
+  }
+  
+ /* Company Overview Section */
+.company-overview {
+  background: linear-gradient(145deg, #ddcdcd, #f1f1f1); /* Soft gradient background */
+  padding: 40px 30px; /* Padding for breathing space */
+  border-radius: 12px; /* Slightly rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  margin: 20px auto; /* Centered container */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  max-width: 1200px; /* Width limitation */
+}
+
+.company-overview:hover {
+  transform: translateY(-3px); /* Slight elevation effect */
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+/* Title styling */
+.company-overview h2 {
+  font-size: 2.2rem; /* Slightly larger for emphasis */
+  margin-bottom: 20px; /* More space below title */
+  color: #4a4a4a; /* Darker but still subdued color */
+  text-transform: uppercase; /* Uppercase for sophistication */
+  letter-spacing: 1.2px; /* Adjusted letter spacing for elegance */
+  border-bottom: 3px solid #e0e0e0; /* Soft border for visual separation */
+  padding-bottom: 10px; /* Space below title */
+  animation: fadeIn 0.6s ease-in-out; /* Fade-in animation */
+}
+
+/* Paragraph styling */
+.company-overview p {
+  font-size: 1.1rem; /* Slightly increased for better readability */
+  line-height: 1.7; /* Comfortable line height */
+  margin-bottom: 20px; /* Spacing between paragraphs */
+  padding: 15px; /* More padding for comfort */
+  border-left: 5px solid #e0e0e0; /* Soft left border */
+  background-color: #ffffff; /* White background for clarity */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  border-radius: 6px; /* Rounded corners for text */
+  color: #4b4b4b; /* Slightly darker text for contrast */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: justify; /* Justify text */
+}
+
+.company-overview p:hover {
+  background-color: #f9f9f9; /* Light background on hover */
+  transform: translateY(-1px); /* Gentle lift effect */
+}
+
+/* Additional adjustments for the lists */
+.company-overview ul {
+  padding: 0; /* Remove default padding */
+  margin: 20px 0; /* Space around the list */
+  text-align: justify; /* Justify text in lists */
+}
+
+.company-overview li {
+  margin-bottom: 15px; /* Space between list items */
+  font-size: 1.1rem; /* Standard font size for list items */
+  color: #444; /* Darker gray for text */
+  text-align: justify; /* Justify text within list items */
+}
+
+  
+  
+  /* Commodities Section */
+  .commodities-section {
+    padding: 80px 5%;
+    background-color: #fff;
+  }
+  
+  .commodities-title {
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    color: #333;
+    border-bottom: 5px solid #ff7043;
+    display: inline-block;
+    padding-bottom: 10px;
+    text-align: left;
+  }
+  
+  .commodities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+  
+  .commodities-intro {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+  
+  .commodity-item {
+    background-color: #f5f5f5;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .commodity-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .commodity-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #ff7043;
+    transition: color 0.3s ease;
+  }
+  
+  .commodity-item:hover h3 {
+    color: #d35400;
+  }
+  
+  .commodity-item p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .commodity-hover {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 112, 67, 0.85);
+    transition: opacity 0.3s ease;
+  }
+  
+  .commodity-item:hover .commodity-hover {
+    opacity: 1;
+  }
+  
+  .btn-details {
+    background-color: white;
+    color: #ff7043;
+    padding: 12px 25px;
+    border: 2px solid #ff7043;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-details:hover {
+    background-color: #ff7043;
+    color: white;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 15px 5%;
+    }
+  
+    .nav-list {
+      flex-direction: column;
+      width: 100%;
+      padding: 0;
+    }
+  
+    .nav-list li {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .nav-list li a {
+      display: block;
+      padding: 15px;
+    }
+  
+    .hero-overlay h2 {
+      font-size: 2.5rem;
+    }
+  
+    .commodities-title {
+      font-size: 2rem;
+    }
+  
+    .commodity-item {
+      padding: 40px;
+    }
+  }
+  
+  /* General Section Styles */
+.additional-sections {
+    background: #e5ba2b88;
+    padding: 10px;
+    display: flex;             /* Use flexbox for horizontal layout */
+    flex-wrap: wrap;          /* Allow wrapping of items */
+    gap: 20px;                /* Space between items */
+}
+
+/* What We Do Section Styles */
+.what-we-do {
+  display: flex; /* Use flexbox to align items in a row */
+  justify-content: space-between; /* Distribute space between text and image */
+  align-items: center; /* Vertically align items */
+  margin-bottom: -10px;
+  padding: 1px;
+  background: linear-gradient(90deg, #ba2e2e00, #6d666600); /* Smooth gradient for a sleek, professional look */
+}
+
+/* Content styling for the text part */
+.what-we-do .content {
+  flex: 1; /* Allow the content section to take up remaining space */
+  max-width: 60%; /* Ensure text takes up to 60% of the width */
+  text-align: justify; /* Justify the text */
+  margin-right: 20px; /* Add space between the text and the image */
+}
+
+/* Image container styling */
+.what-we-do .image-container {
+  max-width: 35%; /* Set the width of the image container */
+}
+
+.what-we-do .what-we-do-image {
+  width: 100%; /* Make sure the image is responsive */
+  height: auto; /* Maintain image aspect ratio */
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .what-we-do {
+      flex-direction: column; /* Stack elements on smaller screens */
+      text-align: center; /* Center-align text and image */
+  }
+
+  .what-we-do .content, .what-we-do .image-container {
+      max-width: 100%; /* Full width on small screens */
+  }
+
+  .what-we-do .content {
+      margin-right: 0; /* Remove right margin */
+  }
+
+  .what-we-do .what-we-do-image {
+      max-width: 80%; /* Adjust image size on smaller screens */
+      margin: 0 auto; /* Center the image */
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+/* Component Styles */
+.quick-links, .commodities-services, .support, .social-media {
+    background: #d8e7ea65;      /* Light grey background for individual components */
+    border-radius: px;
+    padding: 15px;
+    flex: 1 1 200px;          /* Allow flex items to grow and shrink, with a base width of 200px */
+    min-width: 250px;         /* Ensure a minimum width for better readability */
 }
 
-.App-link {
-  color: #61dafb;
+/* Heading Styles */
+h2, h3 {
+    color: #2c3e50;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Paragraph Styles */
+p {
+    color: #34495e;
+}
+
+/* List Styles */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+/* Social Media Icons */
+.social-media {
+    text-align: center;
+    margin: 20px 0;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Spacing between icons */
   }
+  
+  .social-icon {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    transition: transform 0.3s;
+  }
+  
+  .social-icon:hover {
+    transform: scale(2.1); /* Slightly enlarge on hover */
+  }
+  
+/* Footer Styles */
+.footer {
+    text-align: center;
+    background: #56697d;
+    color: #fff;
+    padding: 10px;
 }

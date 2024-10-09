@@ -1,0 +1,212 @@
+/* Company Overview Section */
+.company-overview {
+  background: linear-gradient(145deg, #ddcdcd, #f1f1f1); /* Soft gradient background */
+  padding: 40px 30px; /* Padding for breathing space */
+  border-radius: 12px; /* Slightly rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  margin: 20px auto; /* Centered container */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  max-width: 1200px; /* Width limitation */
+}
+
+.company-overview:hover {
+  transform: translateY(-3px); /* Slight elevation effect */
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+/* Title styling */
+.company-overview h2 {
+  font-size: 2.2rem; /* Slightly larger for emphasis */
+  margin-bottom: 20px; /* More space below title */
+  color: #4a4a4a; /* Darker but still subdued color */
+  text-transform: uppercase; /* Uppercase for sophistication */
+  letter-spacing: 1.2px; /* Adjusted letter spacing for elegance */
+  border-bottom: 3px solid #e0e0e0; /* Soft border for visual separation */
+  padding-bottom: 10px; /* Space below title */
+  animation: fadeIn 0.6s ease-in-out; /* Fade-in animation */
+}
+
+/* Paragraph styling */
+.company-overview p {
+  font-size: 1.1rem; /* Slightly increased for better readability */
+  line-height: 1.7; /* Comfortable line height */
+  margin-bottom: 20px; /* Spacing between paragraphs */
+  padding: 15px; /* More padding for comfort */
+  border-left: 5px solid #e0e0e0; /* Soft left border */
+  background-color: #ffffff; /* White background for clarity */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  border-radius: 6px; /* Rounded corners for text */
+  color: #4b4b4b; /* Slightly darker text for contrast */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: justify; /* Justify text */
+}
+
+.company-overview p:hover {
+  background-color: #f9f9f9; /* Light background on hover */
+  transform: translateY(-1px); /* Gentle lift effect */
+}
+
+/* Additional adjustments for the lists */
+.company-overview ul {
+  padding: 0; /* Remove default padding */
+  margin: 20px 0; /* Space around the list */
+  text-align: justify; /* Justify text in lists */
+}
+
+.company-overview li {
+  margin-bottom: 15px; /* Space between list items */
+  font-size: 1.1rem; /* Standard font size for list items */
+  color: #444; /* Darker gray for text */
+  text-align: justify; /* Justify text within list items */
+}
+
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%; /* Full width */
+  height: 60vh; /* Responsive height */
+  background-color: #f7f7f7; /* Light background */
+  margin: 0; /* No margin */
+  overflow: hidden; 
+}
+
+.hero-image-container {
+  width: 100%; /* Full width */
+  height: 100%;
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8); /* Dim image slightly */
+  transition: filter 0.5s ease;
+}
+
+.hero-image:hover {
+  filter: brightness(0.6); /* Darker on hover */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5); /* Slightly more opaque */
+}
+
+.hero-overlay h2 {
+  font-size: 3.5rem; /* Larger overlay text */
+  color: #ffcc29; /* Bright accent color */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* Stronger shadow */
+  animation: fadeIn 1.5s ease-in-out; /* Fade-in animation */
+  text-align: center; /* Center align */
+  padding: 0 20px; /* Padding for mobile */
+  max-width: 90%; /* Max width for overlay */
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* General Section Styles */
+.additional-sections {
+  background: #f4f4f4;
+  padding: 20px;
+  display: flex; /* Use flexbox for horizontal layout */
+  flex-wrap: wrap; /* Allow wrapping of items */
+  gap: 20px; /* Space between items */
+}
+
+/* What We Do Styles */
+.what-we-do {
+  flex-basis: 100%; /* Take full width for "What We Do" */
+  display: flex; /* Use flexbox for inner alignment */
+  justify-content: space-between; /* Space between content */
+  align-items: flex-start; /* Align items at the start */
+  margin-bottom: 20px; /* Space below this section */
+}
+
+.what-we-do .content {
+  flex: 1; /* Allow content to grow */
+}
+
+.what-we-do .map-image {
+  max-width: 200px; /* Set max width for logo */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Component Styles */
+.quick-links, .commodities-services, .support, .social-media {
+  background: #ecf0f1; /* Light grey background for individual components */
+  border-radius: 8px;
+  padding: 15px;
+  flex: 1 1 200px; /* Allow flex items to grow and shrink, with a base width of 200px */
+  min-width: 250px; /* Ensure a minimum width for better readability */
+}
+
+/* Heading Styles */
+h2, h3 {
+  color: #2c3e50;
+}
+
+/* Paragraph Styles */
+p {
+  color: #34495e;
+}
+
+/* List Styles */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 5px 0;
+}
+
+/* Social Media Icons */
+.social-media {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Reduced spacing between icons */
+}
+
+.social-icon {
+  width: 30px; /* Adjusted size for smaller icons */
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.social-icon:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .whoWeAreTitle {
+    font-size: 2rem; /* Adjust title size for smaller screens */
+  }
+
+  .whoWeAreIntro {
+    font-size: 1.2rem; /* Adjust intro size for smaller screens */
+  }
+
+  .whoWeAreWriteUp {
+    font-size: 1rem; /* Adjust paragraph size for smaller screens */
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+}
