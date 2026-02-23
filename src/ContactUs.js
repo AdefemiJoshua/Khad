@@ -1,56 +1,230 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; // Make sure this line is included
-import styles from './ContactUs.module.css'; // Ensure the correct path
+import React, { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
+import styles from "./ContactUs.module.css";
+import { trackEvent } from "./utils/analytics";
 
-// Main Commodities Component
+const EMAIL = "khadeshglobalintegratedservice@gmail.com";
+const LAST_SUBMIT_KEY = "khadesh_contact_last_submit";
+
+const initialForm = {
+  fullName: "",
+  email: "",
+  company: "",
+  subject: "",
+  message: "",
+  website: "",
+};
+
+function validateForm(form) {
+  const errors = {};
+
+  if (form.fullName.trim().length < 2) {
+    errors.fullName = "Please enter your full name.";
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+    errors.email = "Please enter a valid email address.";
+  }
+
+  if (form.subject.trim().length < 4) {
+    errors.subject = "Please enter a short subject.";
+  }
+
+  if (form.message.trim().length < 20) {
+    errors.message = "Please include at least 20 characters in your message.";
+  }
+
+  return errors;
+}
+
+function inCooldownWindow() {
+  const value = window.localStorage.getItem(LAST_SUBMIT_KEY);
+  if (!value) {
+    return false;
+  }
+  const diffMs = Date.now() - Number(value);
+  return diffMs < 60000;
+}
+
 const ContactUs = () => {
+  const [form, setForm] = useState(initialForm);
+  const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState({ type: "idle", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const canSubmit = useMemo(() => !isSubmitting, [isSubmitting]);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setStatus({ type: "idle", message: "" });
+
+    if (form.website.trim()) {
+      setStatus({ type: "success", message: "Thank you. Your message has been received." });
+      return;
+    }
+
+    const validationErrors = validateForm(form);
+    setErrors(validationErrors);
+    if (Object.keys(validationErrors).length > 0) {
+      setStatus({ type: "error", message: "Please correct the highlighted fields." });
+      return;
+    }
+
+    if (inCooldownWindow()) {
+      setStatus({
+        type: "error",
+        message: "Please wait one minute before sending another message.",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    const subject = encodeURIComponent(`[Website] ${form.subject.trim()}`);
+    const body = encodeURIComponent(
+      [
+        `Name: ${form.fullName.trim()}`,
+        `Email: ${form.email.trim()}`,
+        `Company: ${form.company.trim() || "Not provided"}`,
+        "",
+        form.message.trim(),
+      ].join("\n")
+    );
+
+    window.localStorage.setItem(LAST_SUBMIT_KEY, String(Date.now()));
+    trackEvent("contact_form_submit", {
+      subject: form.subject.trim(),
+      company: form.company.trim() || "none",
+    });
+
+    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+
+    setStatus({
+      type: "success",
+      message: "Your email client has been opened. We will respond as soon as possible.",
+    });
+    setForm(initialForm);
+    setErrors({});
+    setIsSubmitting(false);
+  };
+
   return (
     <div className={styles.ContactUsSection}>
-      <HeroSection /> {/* Include the HeroSection */}
+      <HeroSection />
       <div className={styles.ContactUsContentContainer}>
-     
+        <h2 className={styles.ContactUsTitle}>Talk to our team</h2>
         <div className={styles.ContactUsWriteUp}>
           <p>
-          We hope to hear from you soon. Providing exceptional customer service is our main priority as a company. You can get in touch with our amiable staff Monday through Saturday.         
-           </p>
+            We are available Monday to Saturday to support supplier requests, customer
+            inquiries, and partnership discussions.
+          </p>
+          <p>
+            For urgent requests, email us directly at <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
+          </p>
 
-          <p>
-          Khadesh Global Integrated Services Limited respects the opinions of all of its stakeholders, including suppliers, customers, stockholders, and members of the community. We appreciate input in any form from anywhere in the world. Please get in touch with us if you have any questions, comments, ideas, requests for information, or any input.     
-</p>
-<p>
-The holding company, Khadesh Global Integrated Services Limited, is registered in the Federal Republic of Nigeria. Khadesh Global Integrated Services Limited. oversee our main African businesses.      </p>
-          <p>
-          we are well represented in West Africa         
-           </p>
-          <p>
-         For any enquiry Please contact us At 
-           </p>
-           <a href="mailto:khadeshglobalintegratedservice@gmail.com">
-              khadeshglobalintegratedservice@gmail.com
-             </a> 
-             <p>   
-             We would love to answer your enquires! and We will get back to you promptly.
-             </p> 
+          <form className={styles.contactForm} onSubmit={handleSubmit} noValidate>
+            <label htmlFor="fullName">Full Name</label>
+            <input
+              id="fullName"
+              name="fullName"
+              type="text"
+              value={form.fullName}
+              onChange={handleChange}
+              autoComplete="name"
+              required
+            />
+            {errors.fullName ? <span className={styles.fieldError}>{errors.fullName}</span> : null}
+
+            <label htmlFor="email">Email Address</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              value={form.email}
+              onChange={handleChange}
+              autoComplete="email"
+              required
+            />
+            {errors.email ? <span className={styles.fieldError}>{errors.email}</span> : null}
+
+            <label htmlFor="company">Company (Optional)</label>
+            <input
+              id="company"
+              name="company"
+              type="text"
+              value={form.company}
+              onChange={handleChange}
+              autoComplete="organization"
+            />
+
+            <label htmlFor="subject">Subject</label>
+            <input
+              id="subject"
+              name="subject"
+              type="text"
+              value={form.subject}
+              onChange={handleChange}
+              required
+            />
+            {errors.subject ? <span className={styles.fieldError}>{errors.subject}</span> : null}
+
+            <label htmlFor="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              value={form.message}
+              onChange={handleChange}
+              rows={5}
+              required
+            />
+            {errors.message ? <span className={styles.fieldError}>{errors.message}</span> : null}
+
+            <div className={styles.honeypotField} aria-hidden="true">
+              <label htmlFor="website">Website</label>
+              <input
+                id="website"
+                name="website"
+                type="text"
+                value={form.website}
+                onChange={handleChange}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
+
+            <button type="submit" disabled={!canSubmit} className={styles.submitButton}>
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </button>
+
+            {status.message ? (
+              <p
+                role="status"
+                className={status.type === "error" ? styles.statusError : styles.statusSuccess}
+              >
+                {status.message}
+              </p>
+            ) : null}
+          </form>
         </div>
       </div>
-      <AdditionalSections /> {/* Ensure this component is defined */}
+      <AdditionalSections />
     </div>
   );
 };
 
-// Hero Section Component
 const HeroSection = () => (
   <section className="hero-section">
     <div className="hero-image-container">
-      <img src="/contactus.ico" alt="Agricultural Commodities" className="hero-image" />
-      <div className="hero-overlay">
-        <h2>Contact Us</h2>
-      </div>
+      <img src="/contactus.ico" alt="Contact Khadesh Global team" className="hero-image" />
     </div>
   </section>
 );
 
-// Additional Sections Component
 const AdditionalSections = () => (
   <section className="additional-sections">
     <WhatWeDo />
@@ -61,41 +235,35 @@ const AdditionalSections = () => (
   </section>
 );
 
-// What We Do Component
 function WhatWeDo() {
   return (
     <section className="what-we-do">
       <div className="content">
         <h2>What We Do</h2>
         <p>
-        In order to successfully assist in achieving supply and demand equilibrium, Khadesh Global Integrated Services Limited offers a strategic platform for integrated global sourcing, risk management, and value-added supply solutions for solid mineral resources and agricultural commodities.
-
-
+          Khadesh Global provides integrated global sourcing, risk management, and
+          value-added supply solutions for agricultural commodities.
         </p>
-        
         <p>
-           <br />
-        <strong>Address:</strong> 21 Ndjamena Crescent Wuse 2 Abuja.
+          <strong>Address:</strong> 21 Ndjamena Crescent, Wuse 2, Abuja.
         </p>
       </div>
       <div className="image-container">
-        <img src="map.png" alt="Khadesh Global Services" className="what-we-do-image" />
+        <img src="map.png" alt="Khadesh Global office location map" className="what-we-do-image" />
       </div>
     </section>
   );
 }
-
-
 
 const QuickLinks = () => (
   <div className="quick-links">
     <h3>Quick Links</h3>
     <ul>
       {[
-        { name: "Our vision", path: "/our-vision" },
-        { name: "Our mission", path: "/our-mission" },
+        { name: "Our Vision", path: "/our-vision" },
+        { name: "Our Mission", path: "/our-mission" },
         { name: "Our Partners", path: "/our-partners" },
-        { name: "Our commitment", path: "/our-commitment" },
+        { name: "Our Commitment", path: "/our-commitment" },
         { name: "Our Value Proposition", path: "/our-value-proposition" },
       ].map(({ name, path }) => (
         <li key={name}>
@@ -110,40 +278,21 @@ const QuickLinks = () => (
 
 const CommoditiesAndServices = () => {
   const services = [
-    {
-      name: 'Agricultural Commodities',
-      link: '/commodities#agriculturalCommoditiesSection', 
-    },
-    {
-      name: 'Solid Mineral Resources',
-      link: '/commodities#SolidMineralsSection',
-    },
-    {
-      name: 'Local Supply',
-      link: '/local-supply#services-section', 
-    },
+    { name: "Agricultural Commodities", link: "/commodities#agriculturalCommoditiesSection" },
+{ name: "Local Supply", link: "/local-supply#services-section" },
   ];
 
   return (
     <div className="commodities-services">
-      <h3>Our Commodities & Services</h3>
+      <h3>Our Commodities and Services</h3>
       <ul>
-        {services.map((service, index) => (
-          <li key={index}>
-            <Link 
-              to={service.link} 
+        {services.map((service) => (
+          <li key={service.name}>
+            <Link
+              to={service.link}
               onClick={() => {
-                if (service.name === 'Solid Mineral Resources') {
-                  setTimeout(() => {
-                    const section = document.getElementById("SolidMineralsSection");
-                    if (section) {
-                      section.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }, 0);
-                } else {
-                  window.scrollTo(0, 0);
-                }
-              }} 
+                window.scrollTo(0, 0);
+              }}
             >
               {service.name}
             </Link>
@@ -154,28 +303,19 @@ const CommoditiesAndServices = () => {
   );
 };
 
-
-
-// Support Component
 const Support = () => (
   <div className="support">
     <h3>Support</h3>
     <ul>
-  {[
-    { name: "Contact Us", path: "/Contact-Us" },
-    // Add other links here as needed
-  ].map(({ name, path }) => (
-    <li key={name}>
-      <Link to={path} onClick={() => window.scrollTo(0, 0)}>
-        {name}
-      </Link>
-    </li>
-  ))}
-</ul>
-</div>
+      <li>
+        <Link to="/contact-us" onClick={() => window.scrollTo(0, 0)}>
+          Support Team
+        </Link>
+      </li>
+    </ul>
+  </div>
 );
 
-// Social Media Component
 const SocialMedia = () => (
   <div className="social-media">
     <h3>Get Social With Us</h3>
@@ -183,27 +323,15 @@ const SocialMedia = () => (
       {[
         { platform: "whatsapp", link: "https://wa.me/+2348069081589" },
         { platform: "instagram", link: "https://instagram.com/khadeshglobal" },
-        { platform: "facebook", link: "https://www.facebook.com/khadeshglobal" }, // Added Facebook
-        { platform: "email", link: "mailto:khadeshglobalintegratedservice@gmail.com" }, // Added Email
+        { platform: "facebook", link: "https://www.facebook.com/khadeshglobal" },
+        { platform: "email", link: `mailto:${EMAIL}` },
       ].map(({ platform, link }) => (
-        <a
-          key={platform}
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={platform}
-        >
-          <img
-            src={`/images/${platform}-logo.png`}
-            alt={`${platform} logo`}
-            className="social-icon"
-          />
+        <a key={platform} href={link} target="_blank" rel="noopener noreferrer" aria-label={platform}>
+          <img src={`/images/${platform}-logo.png`} alt={`${platform} logo`} className="social-icon" />
         </a>
       ))}
     </div>
   </div>
 );
-
-
 
 export default ContactUs;

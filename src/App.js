@@ -4,12 +4,14 @@ import {
   Routes,
   Route,
   Link,
-  NavLink,
+  Navigate,
+  useLocation,
 } from "react-router-dom";
 import "./App.css";
 import ProjectManagement from "./ProjectManagement";
 import OurAgents from "./OurAgents";
 import Commodities from "./Commodities";
+import CommodityArticlePage from "./CommodityArticlePage";
 import Strategy from "./OurStrategy";
 import Sustainability from "./Sustainability";
 import ContactUs from "./ContactUs";
@@ -20,120 +22,261 @@ import Ourmission from "./Ourmission";
 import Ourvision from "./Ourvision";
 import Ourcommitment from "./Ourcommitment";
 import LocalSupply from "./LocalSupply";
+import QualityAssuranceCompliance from "./QualityAssuranceCompliance";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import SectionSpyNav from "./components/SectionSpyNav";
+import MobileQuickNav from "./components/MobileQuickNav";
+import SeoMeta from "./components/SeoMeta";
+import PageIntro from "./components/PageIntro";
+import QuotePanel from "./components/QuotePanel";
+import FloatingContactCTA from "./components/FloatingContactCTA";
+import ChatbotWidget from "./components/ChatbotWidget";
+import NotFound from "./NotFound";
+import { initAutoTracking, trackEvent } from "./utils/analytics";
 
 
 // Main App Component
-const App = () => (
-  <Router>
-    <div className="App">
-      <Header />
-      <MainContent />
-      <Footer />
-    </div>
-  </Router>
-);
-
-// Header Component
-const Header = () => {
-  const [isVisible, setIsVisible] = useState(true);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to control dropdown visibility
-
-  const handleScroll = () => {
-    if (window.scrollY > 50) {
-      setIsVisible(false);
-    } else {
-      setIsVisible(true);
-    }
-  };
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen((prev) => !prev); // Toggle dropdown visibility
-  };
+const App = () => {
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    const storedTheme = window.localStorage.getItem("khadesh_theme");
+    if (storedTheme) {
+      setIsDarkTheme(storedTheme === "dark");
+      return;
+    }
+    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    setIsDarkTheme(prefersDark);
   }, []);
 
+  useEffect(() => {
+    document.body.setAttribute("data-theme", isDarkTheme ? "dark" : "light");
+    window.localStorage.setItem("khadesh_theme", isDarkTheme ? "dark" : "light");
+  }, [isDarkTheme]);
+
   return (
-    <header className={`header ${isVisible ? "visible" : "hidden"}`}>
-      <div className="logo-container">
-        {/* Hamburger Menu for mobile */}
-        <div className="hamburger" onClick={toggleDropdown}>
-          <div className="line"></div>
-          <div className="line"></div>
-          <div className="line"></div>
-        </div>
-        <img src="/lion.ico" alt="Khadesh Global Logo" className="logo" />
-        <div className="logo-text"></div>
+    <Router>
+      <div className="App">
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
+        <Header isDarkTheme={isDarkTheme} onToggleTheme={() => setIsDarkTheme((prev) => !prev)} />
+        <ScrollManager />
+        <ImageEnhancer />
+        <MainContent />
+        <Footer />
+        <MobileQuickNav />
+        <ChatbotWidget />
+        <FloatingContactCTA />
       </div>
-      <Navigation isDropdownOpen={isDropdownOpen} toggleDropdown={toggleDropdown} />
-    </header>
+    </Router>
   );
 };
 
-const Navigation = ({ isDropdownOpen, toggleDropdown }) => {
-  return (
-    <nav className={`nav ${isDropdownOpen ? "active" : ""}`}>
-      <ul className="nav-list">
-        {[
-          "Home",
-          "Project Management",
-          "Commodities",
-          "Our Agents",
-          "Our Strategy",
-          "Sustainability",
-          "About us",
-          "Contact Us",
-        ].map((item, index) => (
-          <li key={`${index}-${item}`}>
-            <NavLink
-              to={`/${item.toLowerCase().replace(/\s+/g, "-") === "home" ? "" : item.toLowerCase().replace(/\s+/g, "-")}`}
-              className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}
-              onClick={toggleDropdown} // Close dropdown on link click
-            >
-              {item}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  );
-};
+// Header Component
+// Header and navigation moved to `src/components/Header.js`
 
 // Main Content Component
-const MainContent = () => (
-  <main className="main-content">
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <>
-            <HeroSection />
-            <CompanyOverview />
-            <AgriculturalCommodities />
-            <AdditionalSections />
-          </>
-        }
-      />
-      <Route path="/Project-Management" element={<ProjectManagement />} />
-      <Route path="/commodities" element={<Commodities />} />
-      <Route path="/Our-Agents" element={<OurAgents />} />
-      <Route path="/our-strategy" element={<Strategy />} />
-      <Route path="/sustainability" element={<Sustainability />} />
-      <Route path="/contact-us" element={<ContactUs />} />
-      <Route path="Our-Value-Proposition" element={<OurValueProposition />} />
-      <Route path="Our-Partners" element={<OurPartners />} />
-      <Route path="About-us" element={<Aboutus />} />
-      <Route path="Our-mission" element={<Ourmission />} />
-      <Route path="Our-vision" element={<Ourvision />} />
-      <Route path="Our-commitment" element={< Ourcommitment  />} />
-      <Route path="Local-Supply" element={<  LocalSupply  />} />
-    </Routes>
-  </main>
-);
+const getPageTheme = (pathname) => {
+  const normalizedPath = pathname.toLowerCase();
+
+  if (normalizedPath === "/") {
+    return "home";
+  }
+  if (normalizedPath.includes("project-management")) {
+    return "project";
+  }
+  if (normalizedPath.includes("commodities")) {
+    return "commodities";
+  }
+  if (normalizedPath.includes("sustainability")) {
+    return "sustainability";
+  }
+  if (normalizedPath.includes("quality-assurance-compliance")) {
+    return "sustainability";
+  }
+  if (normalizedPath.includes("contact-us")) {
+    return "contact";
+  }
+  if (normalizedPath.includes("about-us")) {
+    return "about";
+  }
+  if (normalizedPath.includes("our-vision")) {
+    return "about";
+  }
+  if (normalizedPath.includes("our-mission")) {
+    return "about";
+  }
+  if (normalizedPath.includes("our-commitment")) {
+    return "about";
+  }
+  if (normalizedPath.includes("our-value-proposition")) {
+    return "about";
+  }
+  if (normalizedPath.includes("our-partners")) {
+    return "about";
+  }
+  if (normalizedPath.includes("our-agents")) {
+    return "about";
+  }
+  if (normalizedPath.includes("local-supply")) {
+    return "supply";
+  }
+
+  return "general";
+};
+
+const ScrollManager = () => {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      return;
+    }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [pathname, hash]);
+
+  useEffect(() => {
+    if (!hash) {
+      return;
+    }
+
+    const id = hash.replace("#", "");
+    const section = document.getElementById(id);
+    if (section) {
+      setTimeout(() => {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 50);
+    }
+  }, [pathname, hash]);
+
+  return null;
+};
+
+const ImageEnhancer = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const images = Array.from(document.querySelectorAll("main img"));
+    const listeners = [];
+
+    images.forEach((image) => {
+      if (!image.classList.contains("hero-image")) {
+        image.setAttribute("loading", "lazy");
+      }
+      image.setAttribute("decoding", "async");
+
+      if (!image.complete) {
+        image.classList.add("img-loading");
+        const clearLoading = () => image.classList.remove("img-loading");
+        image.addEventListener("load", clearLoading, { once: true });
+        image.addEventListener("error", clearLoading, { once: true });
+        listeners.push({ image, clearLoading });
+      }
+    });
+
+    return () => {
+      listeners.forEach(({ image, clearLoading }) => {
+        image.removeEventListener("load", clearLoading);
+        image.removeEventListener("error", clearLoading);
+      });
+    };
+  }, [pathname]);
+
+  return null;
+};
+
+const MainContent = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    initAutoTracking();
+  }, []);
+
+  useEffect(() => {
+    trackEvent("page_view", { path: pathname });
+  }, [pathname]);
+
+  useEffect(() => {
+    const targets = Array.from(
+      document.querySelectorAll(
+        ".reveal-on-scroll, .commodity-item, .what-we-do, .quick-links, .commodities-services, .support, .social-media, [class*='commodityCard']:not([class*='commodityCards']), [class*='ContentContainer']"
+      )
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.16, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    targets.forEach((target) => {
+      target.classList.add("reveal-ready");
+      observer.observe(target);
+    });
+
+    return () => observer.disconnect();
+  }, [pathname]);
+
+  return (
+    <main id="main-content" className="main-content" data-page={getPageTheme(pathname)}>
+      <SeoMeta pathname={pathname} />
+      <PageIntro pathname={pathname} />
+      <div className="section-divider" aria-hidden="true" />
+      <div className="route-transition" key={pathname}>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <HeroSection />
+                <CompanyOverview />
+                <TestimonialsSection />
+                <AgriculturalCommodities />
+                <AdditionalSections />
+              </>
+            }
+          />
+          <Route path="/project-management" element={<ProjectManagement />} />
+          <Route path="/commodities" element={<Commodities />} />
+          <Route path="/commodities/:slug" element={<CommodityArticlePage />} />
+          <Route path="/our-agents" element={<OurAgents />} />
+          <Route path="/our-strategy" element={<Strategy />} />
+          <Route path="/sustainability" element={<Sustainability />} />
+          <Route path="/quality-assurance-compliance" element={<QualityAssuranceCompliance />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/our-value-proposition" element={<OurValueProposition />} />
+          <Route path="/our-partners" element={<OurPartners />} />
+          <Route path="/about-us" element={<Aboutus />} />
+          <Route path="/our-mission" element={<Ourmission />} />
+          <Route path="/our-vision" element={<Ourvision />} />
+          <Route path="/our-commitment" element={<Ourcommitment />} />
+          <Route path="/local-supply" element={<LocalSupply />} />
+          <Route path="/Project-Management" element={<Navigate replace to="/project-management" />} />
+          <Route path="/Our-Agents" element={<Navigate replace to="/our-agents" />} />
+          <Route path="/About-us" element={<Navigate replace to="/about-us" />} />
+          <Route path="/Our-mission" element={<Navigate replace to="/our-mission" />} />
+          <Route path="/Our-vision" element={<Navigate replace to="/our-vision" />} />
+          <Route path="/Our-commitment" element={<Navigate replace to="/our-commitment" />} />
+          <Route path="/Our-Value-Proposition" element={<Navigate replace to="/our-value-proposition" />} />
+          <Route path="/Our-Partners" element={<Navigate replace to="/our-partners" />} />
+          <Route path="/Local-Supply" element={<Navigate replace to="/local-supply" />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+      <QuotePanel pathname={pathname} />
+      <div className="section-divider alt" aria-hidden="true" />
+      <SectionSpyNav pathname={pathname} />
+    </main>
+  );
+};
 
 // Hero Section Component with Image Slider
 const HeroSection = () => {
@@ -143,11 +286,7 @@ const HeroSection = () => {
     { src: "/Grain1.ico", alt: "Agricultural Commodities", caption: "Agricultural Commodities" },
     { src: "/Grain2.ico", alt: "Agricultural Commodities", caption: "Agricultural Commodities" },
     { src: "/Grain3.ico", alt: "Agricultural Commodities", caption: "Agricultural Commodities" },
-    { src: "/Grain4.ico", alt: "Solid Minerals", caption: "Solid Minerals" },
-    { src: "/Grain5.ico", alt: "Solid Minerals", caption: "Solid Minerals" },
-    { src: "/Grain6.ico", alt: "Solid Minerals", caption: "Solid Minerals" },
     { src: "/Grain7.ico", alt: "Agricultural Commodities", caption: "Agricultural Commodities" },
-    { src: "/Grain8.ico", alt: "Solid Minerals", caption: "Solid Minerals" },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -178,6 +317,8 @@ const HeroSection = () => {
             key={index}
             className={`slider-dot ${index === currentSlide ? "active" : ""}`}
             onClick={() => setCurrentSlide(index)}
+            type="button"
+            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
@@ -190,7 +331,7 @@ const CompanyOverview = () => (
   <section className="company-overview">
     <h2>Value Based Agricultural Commodity Trading Company</h2>
     <p>
-    Khadesh Global Integrated Services Limited's strategy involves combining strong risk management systems with distinctive global capabilities to maximise value and efficiency throughout the global supply chain for solid minerals and agricultural commodities.
+    Khadesh Global Integrated Services Limited's strategy involves combining strong risk management systems with distinctive global capabilities to maximise value and efficiency throughout the global supply chain for agricultural commodities.
     </p>
     <p>
     During the busiest time of year, we usually purchase agricultural commodities from the main low-cost producing nations; we then consolidate and export the goods straight to customers all over the world. Delivering commodities to developed economies, emerging markets, and frontier economies worldwide, our cooperation with numerous producers, partners, and clients spans boundaries.
@@ -201,41 +342,66 @@ const CompanyOverview = () => (
   </section>
 );
 
+const testimonials = [
+  {
+    quote:
+      "Khadesh Global delivered exactly what we needed on schedule, with quality checks clearly documented from source to delivery.",
+    name: "Procurement Manager",
+    company: "Food Processing Firm",
+  },
+  {
+    quote:
+      "Their communication was fast, transparent, and practical. We had clear timelines and no surprises throughout the transaction.",
+    name: "Operations Lead",
+    company: "Regional Distribution Company",
+  },
+  {
+    quote:
+      "From sourcing to export coordination, the team handled the process professionally and helped us reduce operational friction.",
+    name: "Supply Chain Director",
+    company: "Agri-Trade Partner",
+  },
+];
+
+const TestimonialsSection = () => (
+  <section className="testimonials-section reveal-on-scroll" aria-labelledby="testimonials-title">
+    <h2 id="testimonials-title">Testimonials</h2>
+    <p className="testimonials-intro">
+      Feedback from clients and partners who rely on Khadesh Global for dependable agricultural commodity delivery.
+    </p>
+    <div className="testimonials-grid">
+      {testimonials.map((item, index) => (
+        <article key={`${item.name}-${index}`} className="testimonial-card">
+          <p className="testimonial-quote">"{item.quote}"</p>
+          <p className="testimonial-author">{item.name}</p>
+          <p className="testimonial-company">{item.company}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+);
+
 // Commodity details
 const commodityDetails = {
-  "Raw Cashew Nut": {
+  "Sesame Seeds": {
     overview:
-      "Raw cashew nuts are seeds that require processing to remove their toxic shell before consumption, valued for their nutrition and industrial uses.",
-    details:
-      "Khadesh Global Integrated Services Limited sources high-quality Cashew nuts from various regions, ensuring the best practices in production and trade.",
+      "Sesame seeds are nutrient-dense seeds from Sesamum indicum, widely used in baking, oils, and health-focused diets.",
+    link: "/commodities/sesame-seeds",
   },
   "Dried Hibiscus Flower": {
     overview:
       "Dried hibiscus flowers, rich in antioxidants and vitamin C, are commonly used to make teas, beverages, and natural remedies, known for their tart flavor and potential health benefits like reducing blood pressure and promoting digestion.",
-    details:
-      "We ensure efficient sourcing and supply chain management for Dried hibiscus flowers to meet global demands.",
-  },
-  "Dried Baobab Fruit": {
-    overview:
-      "Dried baobab fruit, known for its citrus-like flavor, is a nutrient-dense superfood rich in vitamin C, fiber, and antioxidants. The powder made from the fruit pulp is often added to smoothies, snacks, and health supplements.",
-    details:
-      "Khadesh Global Integrated Services Limited provides a wide range of Dried baobab fruit, sourced sustainably from reputable producers.",
+    link: "/commodities/dried-hibiscus-flower",
   },
   "Click For More of our Products": {
-    link: "/commodities#.HeroSection", // Add the route to the products page here
+    link: "/commodities#agriculturalCommoditiesSection",
   },
 };
 
 
 // Agricultural Commodities Section Component
 const AgriculturalCommodities = () => {
-  const [expandedIndex, setExpandedIndex] = useState(null);
-
   const commodities = Object.keys(commodityDetails);
-
-  const handleLearnMoreClick = (index) => {
-    setExpandedIndex((prevIndex) => (prevIndex === index ? null : index));
-  };
 
   return (
     <section className="commodities-section">
@@ -250,8 +416,6 @@ const AgriculturalCommodities = () => {
             key={index}
             title={commodity}
             details={commodityDetails[commodity]}
-            isExpanded={expandedIndex === index}
-            onLearnMoreClick={() => handleLearnMoreClick(index)}
           />
         ))}
       </div>
@@ -260,27 +424,22 @@ const AgriculturalCommodities = () => {
 };
 
 // Commodity Item Component
-const CommodityItem = ({ title, details, isExpanded, onLearnMoreClick }) => (
-  <div className="commodity-item">
-    <h3>{title}</h3>
-    <p>{details.overview}</p>
-    <div className="commodity-hover">
-      {title === "Click For More of our Products" ? (
-        <Link to={details.link}>
-          <button className="btn-details">View More Products</button>
+const CommodityItem = ({ title, details }) => (
+  title === "Click For More of our Products" ? (
+    <Link to={details.link} className="commodity-item commodity-item-compact commodity-item-cta">
+      <h3>{title}</h3>
+    </Link>
+  ) : (
+    <div className="commodity-item">
+      <h3>{title}</h3>
+      {details.overview ? <p>{details.overview}</p> : null}
+      <div className="commodity-hover">
+        <Link to={details.link} className="btn-details btn-link">
+          Learn More
         </Link>
-      ) : (
-        <button className="btn-details" onClick={onLearnMoreClick}>
-          {isExpanded ? "Show Less" : "Learn More"}
-        </button>
-      )}
-    </div>
-    {isExpanded && title !== "Click For More of our Products" && (
-      <div className="additional-info">
-        <p>{details.details}</p>
       </div>
-    )}
-  </div>
+    </div>
+  )
 );
 
 
@@ -303,7 +462,7 @@ function WhatWeDo() {
       <div className="content">
         <h2>What We Do</h2>
         <p>
-        In order to successfully assist in achieving supply and demand equilibrium, Khadesh Global Integrated Services Limited offers a strategic platform for integrated global sourcing, risk management, and value-added supply solutions for solid mineral resources and agricultural commodities.
+        In order to successfully assist in achieving supply and demand equilibrium, Khadesh Global Integrated Services Limited offers a strategic platform for integrated global sourcing, risk management, and value-added supply solutions for agricultural commodities.
 
 
         </p>
@@ -327,10 +486,10 @@ const QuickLinks = () => (
     <h3>Quick Links</h3>
     <ul>
       {[
-        { name: "Our vision", path: "/our-vision" },
-        { name: "Our mission", path: "/our-mission" },
+        { name: "Our Vision", path: "/our-vision" },
+        { name: "Our Mission", path: "/our-mission" },
         { name: "Our Partners", path: "/our-partners" },
-        { name: "Our commitment", path: "/our-commitment" },
+        { name: "Our Commitment", path: "/our-commitment" },
         { name: "Our Value Proposition", path: "/our-value-proposition" },
       ].map(({ name, path }) => (
         <li key={name}>
@@ -349,11 +508,7 @@ const CommoditiesAndServices = () => {
       name: 'Agricultural Commodities',
       link: '/commodities#agriculturalCommoditiesSection', 
     },
-    {
-      name: 'Solid Mineral Resources',
-      link: '/commodities#SolidMineralsSection',
-    },
-    {
+{
       name: 'Local Supply',
       link: '/local-supply#services-section', 
     },
@@ -368,16 +523,7 @@ const CommoditiesAndServices = () => {
             <Link 
               to={service.link} 
               onClick={() => {
-                if (service.name === 'Solid Mineral Resources') {
-                  setTimeout(() => {
-                    const section = document.getElementById("SolidMineralsSection");
-                    if (section) {
-                      section.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }, 0);
-                } else {
-                  window.scrollTo(0, 0);
-                }
+                window.scrollTo(0, 0);
               }} 
             >
               {service.name}
@@ -397,7 +543,7 @@ const Support = () => (
     <h3>Support</h3>
     <ul>
   {[
-    { name: "Contact Us", path: "/Contact-Us" },
+    { name: "Contact Us", path: "/contact-us" },
     // Add other links here as needed
   ].map(({ name, path }) => (
     <li key={name}>
@@ -440,11 +586,5 @@ const SocialMedia = () => (
 );
 
 
-// Footer Component
-const Footer = () => (
-  <footer className="footer">
-    <p>&copy; 2024 Khadesh Global. All rights reserved.</p>
-  </footer>
-);
-
+// Footer moved to `src/components/Footer.js`
 export default App;

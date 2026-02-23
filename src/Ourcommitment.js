@@ -19,10 +19,10 @@ const Ourcommitment = () => {
   By working closely with NAQS and aligning our practices with international standards, we contribute to enhancing Nigeria’s reputation as a reliable source of agricultural goods, ultimately supporting the growth and sustainability of the sector.
 </p>
 <p>
-At Khadesh Global Integrated Services Limited, we prioritize our clients' requirements by ensuring that all our solid mineral products come with comprehensive certifications, including detailed analysis reports. This commitment underscores our dedication to quality assurance and compliance within the solid minerals sector.
+At Khadesh Global Integrated Services Limited, we prioritize our clients' requirements by ensuring that all our agricultural products come with comprehensive certifications, including detailed analysis reports. This commitment underscores our dedication to quality assurance and compliance within the agricultural sector.
 </p>
 <p>
-The Certificate of Analysis serves as a critical document that verifies the quality, composition, and safety of our minerals. We collaborate with reputable laboratories and regulatory authorities to ensure that our products meet both national and international standards. This includes adhering to the guidelines set by agencies like the Nigerian Geological Survey Agency (NGSA) and the Standards Organization of Nigeria (SON), which are responsible for ensuring the integrity and compliance of minerals used in global trade.
+The Certificate of Analysis serves as a critical document that verifies the quality, composition, and safety of our agricultural products. We collaborate with reputable laboratories and regulatory authorities to ensure that our products meet both national and international standards. This includes adhering to relevant guidelines from agricultural and quality assurance bodies, helping us maintain integrity and compliance in global trade.
 </p>  
         </div>
       </div>
@@ -60,7 +60,7 @@ function WhatWeDo() {
       <div className="content">
         <h2>What We Do</h2>
         <p>
-        In order to successfully assist in achieving supply and demand equilibrium, Khadesh Global Integrated Services Limited offers a strategic platform for integrated global sourcing, risk management, and value-added supply solutions for solid mineral resources and agricultural commodities.
+        In order to successfully assist in achieving supply and demand equilibrium, Khadesh Global Integrated Services Limited offers a strategic platform for integrated global sourcing, risk management, and value-added supply solutions for agricultural commodities.
 
 
         </p>
@@ -84,8 +84,8 @@ const QuickLinks = () => (
     <h3>Quick Links</h3>
     <ul>
       {[
-        { name: "Our vision", path: "/our-vision" },
-        { name: "Our mission", path: "/our-mission" },
+        { name: "Our Vision", path: "/our-vision" },
+        { name: "Our Mission", path: "/our-mission" },
         { name: "Our Partners", path: "/our-partners" },
         { name: "Our Value Proposition", path: "/our-value-proposition" },
       ].map(({ name, path }) => (
@@ -105,11 +105,7 @@ const CommoditiesAndServices = () => {
       name: 'Agricultural Commodities',
       link: '/commodities#agriculturalCommoditiesSection', 
     },
-    {
-      name: 'Solid Mineral Resources',
-      link: '/commodities#SolidMineralsSection',
-    },
-    {
+{
       name: 'Local Supply',
       link: '/local-supply#services-section', 
     },
@@ -124,16 +120,7 @@ const CommoditiesAndServices = () => {
             <Link 
               to={service.link} 
               onClick={() => {
-                if (service.name === 'Solid Mineral Resources') {
-                  setTimeout(() => {
-                    const section = document.getElementById("SolidMineralsSection");
-                    if (section) {
-                      section.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }, 0);
-                } else {
-                  window.scrollTo(0, 0);
-                }
+                window.scrollTo(0, 0);
               }} 
             >
               {service.name}
@@ -153,7 +140,7 @@ const Support = () => (
     <h3>Support</h3>
     <ul>
   {[
-    { name: "Contact Us", path: "/Contact-Us" },
+    { name: "Contact Us", path: "/contact-us" },
     // Add other links here as needed
   ].map(({ name, path }) => (
     <li key={name}>

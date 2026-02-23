@@ -329,7 +329,7 @@
   }
   
   /* Responsive Design */
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .commoditiesTitle {
       font-size: 2rem; /* Adjust title size for smaller screens */
     }
@@ -343,4 +343,145 @@
       padding: 15px; /* Reduce padding for smaller screens */
     }
   }
+
+/* Commodity cards in two vertical columns */
+.commodityCards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+  justify-content: center;
+  overflow: visible;
+  padding: 0.25rem;
+}
+
+.commodityCard {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  padding: 0;
+  border: 1px solid #d7e3ef;
+  border-radius: 16px;
+  background: #0f172a;
+  box-shadow: 0 12px 30px rgba(12, 21, 43, 0.14);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.commodityImage {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  margin: 0;
+  transform: scale(1.01);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.45rem;
+  padding: 1rem;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.12) 15%, rgba(0, 0, 0, 0.78) 100%);
+  transition: background 0.35s ease;
+}
+
+.overlayTitle,
+.overlayAction,
+.overlayActionSecondary {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  text-decoration: none;
+}
+
+.overlayTitle {
+  color: #ffffff;
+  font-size: 1.12rem;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.overlayAction,
+.overlayActionSecondary {
+  color: #ffcc8f;
+  font-size: 0.86rem;
+  font-weight: 700;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.overlayActionSecondary {
+  color: #f5f5f5;
+  font-size: 0.8rem;
+}
+
+.overlayVariants {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 0.15rem;
+}
+
+.overlayVariantTag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  padding: 0.08rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.overlayTitle:hover,
+.overlayAction:hover,
+.overlayActionSecondary:hover {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+.commodityCard::before {
+  content: "";
+  position: absolute;
+  inset: -30% auto auto -40%;
+  width: 55%;
+  height: 180%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.28) 45%, rgba(255, 255, 255, 0) 100%);
+  transform: translateX(-120%) rotate(12deg);
+  transition: transform 0.65s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.commodityCard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 204, 143, 0.7);
+  box-shadow: 0 18px 40px rgba(12, 21, 43, 0.28);
+}
+
+.commodityCard:hover::before {
+  transform: translateX(280%) rotate(12deg);
+}
+
+.commodityCard:hover .commodityImage {
+  transform: scale(1.08);
+  filter: saturate(1.05) contrast(1.03);
+}
+
+.commodityCard:hover .cardOverlay {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.08) 8%, rgba(0, 0, 0, 0.86) 100%);
+}
+
+@media (max-width: 900px) {
+  .commodityCards {
+    grid-template-columns: 1fr;
+  }
+}
   

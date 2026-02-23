@@ -14,6 +14,7 @@
   background: linear-gradient(145deg, #ddcdcd, #f1f1f1); /* Soft gradient background */
   border-radius: 10px; /* Rounded corners for the container */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  text-align: center;
 }
 
 .ContactUsTitle {
@@ -21,10 +22,12 @@
   margin-bottom: 20px; /* Reduced spacing below the title */
   color: #333; /* Dark text for contrast */
   border-bottom: 5px solid #ff7043; /* Underline with accent color */
-  display: inline-block; /* Makes the border only under the title */
+  display: table; /* Allows reliable horizontal centering */
   padding-bottom: 10px; /* Spacing below the title text */
-  text-align: left; /* Align text to the left */
+  text-align: center;
   font-weight: bold; /* Bold title for emphasis */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ContactUsIntro {
@@ -38,11 +41,11 @@
 
 .ContactUsWriteUp {
   font-size: 1.1rem; /* Standard paragraph text size */
-  color: #444; /* Darker gray for text */
+  color: #1f3650;
   margin: 0 auto; /* Centering */
   max-width: 900px; /* Wider max width for larger screens */
   padding: 30px; /* Increased inner padding for spacious feel */
-  background-color: #f7f9fc; /* Light blue-gray background */
+  background-color: #ffffff;
   border-radius: 12px; /* More rounded corners */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
   line-height: 1.7; /* Improved line height for clarity */
@@ -52,6 +55,7 @@
 .ContactUsWriteUp p {
   margin-bottom: 20px; /* Spacing between paragraphs */
   transition: color 0.3s ease; /* Smooth color transition */
+  color: #28435f;
 }
 
 .ContactUsWriteUp strong {
@@ -61,6 +65,26 @@
 
 .ContactUsWriteUp p:hover {
   color: #d35400; /* Change text color on hover */
+}
+
+.ContactUsWriteUp a {
+  color: #0a4d91;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+body[data-theme="dark"] .ContactUsWriteUp {
+  background: #132843;
+  color: #e7f1ff;
+  border: 1px solid #37567e;
+}
+
+body[data-theme="dark"] .ContactUsWriteUp p {
+  color: #d2e3f8;
+}
+
+body[data-theme="dark"] .ContactUsWriteUp a {
+  color: #98ceff;
 }
 
 /* Hero Section */
@@ -211,4 +235,77 @@ ul li {
     font-size: 1rem; /* Adjust paragraph size for smaller screens */
     padding: 15px; /* Reduce padding for smaller screens */
   }
+}
+
+.contactForm {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.contactForm label {
+  font-weight: 600;
+  color: #1f2d3d;
+}
+
+.contactForm input,
+.contactForm textarea {
+  width: 100%;
+  border: 1px solid #c5d4e3;
+  border-radius: 8px;
+  padding: 0.62rem 0.7rem;
+  font: inherit;
+  background: #fff;
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+  outline: 2px solid rgba(47, 106, 163, 0.24);
+  border-color: #2f6aa3;
+}
+
+.fieldError {
+  color: #b42318;
+  font-size: 0.85rem;
+}
+
+.honeypotField {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.submitButton {
+  margin-top: 0.3rem;
+  border: none;
+  border-radius: 10px;
+  background: #0a214e;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.72rem 1rem;
+  cursor: pointer;
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.statusSuccess,
+.statusError {
+  margin-top: 0.4rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+}
+
+.statusSuccess {
+  background: #ecfdf3;
+  color: #027a48;
+}
+
+.statusError {
+  background: #fef3f2;
+  color: #b42318;
 }

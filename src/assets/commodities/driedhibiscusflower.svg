@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Dried Hibiscus Flower illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#7c1436"/>
+      <stop offset="1" stop-color="#2e0d18"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <g fill="#d94170">
+    <path d="M600 270l95 70-35 110-120 0-35-110z"/>
+    <path d="M520 340l-110 40-70-90 95-70z"/>
+    <path d="M680 340l110 40 70-90-95-70z"/>
+    <path d="M530 450l-70 100-120-10 35-110z"/>
+    <path d="M670 450l70 100 120-10-35-110z"/>
+  </g>
+  <circle cx="600" cy="390" r="45" fill="#ffd2a5"/>
+  <text x="600" y="150" fill="#ffffff" font-size="62" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700">DRIED HIBISCUS FLOWER</text>
+</svg>

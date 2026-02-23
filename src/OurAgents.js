@@ -80,7 +80,7 @@ function WhatWeDo() {
       <div className="content">
         <h2>What We Do</h2>
         <p>
-        In order to successfully assist in achieving supply and demand equilibrium, Khadesh Global Integrated Services Limited offers a strategic platform for integrated global sourcing, risk management, and value-added supply solutions for solid mineral resources and agricultural commodities.
+        In order to successfully assist in achieving supply and demand equilibrium, Khadesh Global Integrated Services Limited offers a strategic platform for integrated global sourcing, risk management, and value-added supply solutions for agricultural commodities.
 
 
         </p>
@@ -104,10 +104,10 @@ const QuickLinks = () => (
     <h3>Quick Links</h3>
     <ul>
       {[
-        { name: "Our vision", path: "/our-vision" },
-        { name: "Our mission", path: "/our-mission" },
+        { name: "Our Vision", path: "/our-vision" },
+        { name: "Our Mission", path: "/our-mission" },
         { name: "Our Partners", path: "/our-partners" },
-        { name: "Our commitment", path: "/our-commitment" },
+        { name: "Our Commitment", path: "/our-commitment" },
         { name: "Our Value Proposition", path: "/our-value-proposition" },
       ].map(({ name, path }) => (
         <li key={name}>
@@ -126,11 +126,7 @@ const CommoditiesAndServices = () => {
       name: 'Agricultural Commodities',
       link: '/commodities#agriculturalCommoditiesSection', 
     },
-    {
-      name: 'Solid Mineral Resources',
-      link: '/commodities#SolidMineralsSection',
-    },
-    {
+{
       name: 'Local Supply',
       link: '/local-supply#services-section', 
     },
@@ -145,16 +141,7 @@ const CommoditiesAndServices = () => {
             <Link 
               to={service.link} 
               onClick={() => {
-                if (service.name === 'Solid Mineral Resources') {
-                  setTimeout(() => {
-                    const section = document.getElementById("SolidMineralsSection");
-                    if (section) {
-                      section.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }, 0);
-                } else {
-                  window.scrollTo(0, 0);
-                }
+                window.scrollTo(0, 0);
               }} 
             >
               {service.name}
@@ -174,7 +161,7 @@ const Support = () => (
     <h3>Support</h3>
     <ul>
   {[
-    { name: "Contact Us", path: "/Contact-Us" },
+    { name: "Contact Us", path: "/contact-us" },
     // Add other links here as needed
   ].map(({ name, path }) => (
     <li key={name}>

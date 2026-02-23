@@ -9,16 +9,79 @@ const Sustainability = () => {
       <HeroSection /> {/* Include the HeroSection */}
       <div className={styles.SustainabilityContentContainer}>
         <div className={styles.SustainabilityWriteUp}>
-        <p>
-        Khadesh Global Integrated Services Limited is committed to leadership in responsibility and sustainability.  
-        </p>
-        <p>
-        In all of our commercial endeavours, our organisation aims to maintain the greatest standards of moral behaviour and openness. We are dedicated to the health and safety of our customers, workers, communities, and environment in addition to providing high-quality products.        
-</p>
-        <p>
-        Regarding business and human rights, Khadesh Global Integrated Services Limited acknowledges the significance of the United Nations Guiding Principles (UNGP).         
-</p>
-          
+          <h2>SUSTAINABILITY & RESPONSIBLE SOURCING</h2>
+          <h3>Our Commitment to Sustainable Agriculture</h3>
+          <p>
+            Khadesh Global is committed to promoting sustainable agricultural practices that protect the environment,
+            support farming communities, and meet the growing expectations of European and international buyers.
+          </p>
+          <p>
+            We align our operations with responsible sourcing principles and evolving EU sustainability standards.
+          </p>
+
+          <h3>Responsible Sourcing</h3>
+          <p>We work directly with trusted farmers and aggregators to ensure:</p>
+          <ul>
+            <li>Ethical sourcing practices</li>
+            <li>No child labor</li>
+            <li>Fair compensation within local supply chains</li>
+            <li>Transparent supplier relationships</li>
+            <li>Compliance with EU human rights due diligence expectations</li>
+          </ul>
+          <p>
+            Supplier assessments are conducted periodically to ensure adherence to food safety and ethical standards.
+          </p>
+
+          <h3>Environmental Responsibility</h3>
+          <p>Khadesh Global promotes environmentally conscious practices including:</p>
+          <ul>
+            <li>Reduced post-harvest losses through proper drying and storage</li>
+            <li>Moisture control to prevent mold and aflatoxin contamination</li>
+            <li>Minimal chemical usage and adherence to EU MRL requirements</li>
+            <li>Encouragement of good agricultural practices (GAP)</li>
+            <li>Responsible waste management during cleaning and sorting</li>
+          </ul>
+          <p>
+            We continuously work with our partners to reduce environmental impact throughout the supply chain.
+          </p>
+
+          <h3>Compliance with EU Sustainability Regulations</h3>
+          <p>We monitor and align with relevant EU frameworks including:</p>
+          <ul>
+            <li>EU General Food Law (EC 178/2002)</li>
+            <li>EU Maximum Residue Levels Regulation (EC 396/2005)</li>
+            <li>EU Corporate Sustainability Due Diligence expectations</li>
+          </ul>
+          <p>
+            Traceability systems are implemented to ensure transparency from farm to export shipment.
+          </p>
+
+          <h3>Community Impact</h3>
+          <p>As a Nigeria-based agricultural exporter, Khadesh Global supports:</p>
+          <ul>
+            <li>Rural farmer livelihoods</li>
+            <li>Women participation in agricultural value chains</li>
+            <li>Local employment in processing and logistics</li>
+            <li>Capacity building on post-harvest handling</li>
+          </ul>
+          <p>
+            We believe sustainable trade should create shared value across the supply chain.
+          </p>
+
+          <h3>Continuous Improvement</h3>
+          <p>We are committed to:</p>
+          <ul>
+            <li>Strengthening traceability systems</li>
+            <li>Enhancing food safety monitoring</li>
+            <li>Expanding sustainability training programs for suppliers</li>
+            <li>Pursuing internationally recognized food safety and sustainability certifications</li>
+          </ul>
+
+          <p>
+            Khadesh Global is dedicated to supplying high-quality agricultural commodities that meet international food
+            safety standards while promoting environmental stewardship and responsible trade practices. Sustainability
+            is integrated into our sourcing, processing, and export operations.
+          </p>
         </div>
       </div>
       <AdditionalSections /> {/* Ensure this component is defined */}
@@ -56,7 +119,7 @@ function WhatWeDo() {
       <div className="content">
         <h2>What We Do</h2>
         <p>
-        In order to successfully assist in achieving supply and demand equilibrium, Khadesh Global Integrated Services Limited offers a strategic platform for integrated global sourcing, risk management, and value-added supply solutions for solid mineral resources and agricultural commodities.
+        In order to successfully assist in achieving supply and demand equilibrium, Khadesh Global Integrated Services Limited offers a strategic platform for integrated global sourcing, risk management, and value-added supply solutions for agricultural commodities.
 
 
         </p>
@@ -80,10 +143,10 @@ const QuickLinks = () => (
     <h3>Quick Links</h3>
     <ul>
       {[
-        { name: "Our vision", path: "/our-vision" },
-        { name: "Our mission", path: "/our-mission" },
+        { name: "Our Vision", path: "/our-vision" },
+        { name: "Our Mission", path: "/our-mission" },
         { name: "Our Partners", path: "/our-partners" },
-        { name: "Our commitment", path: "/our-commitment" },
+        { name: "Our Commitment", path: "/our-commitment" },
         { name: "Our Value Proposition", path: "/our-value-proposition" },
       ].map(({ name, path }) => (
         <li key={name}>
@@ -102,11 +165,7 @@ const CommoditiesAndServices = () => {
       name: 'Agricultural Commodities',
       link: '/commodities#agriculturalCommoditiesSection', 
     },
-    {
-      name: 'Solid Mineral Resources',
-      link: '/commodities#SolidMineralsSection',
-    },
-    {
+{
       name: 'Local Supply',
       link: '/local-supply#services-section', 
     },
@@ -121,16 +180,7 @@ const CommoditiesAndServices = () => {
             <Link 
               to={service.link} 
               onClick={() => {
-                if (service.name === 'Solid Mineral Resources') {
-                  setTimeout(() => {
-                    const section = document.getElementById("SolidMineralsSection");
-                    if (section) {
-                      section.scrollIntoView({ behavior: "smooth" });
-                    }
-                  }, 0);
-                } else {
-                  window.scrollTo(0, 0);
-                }
+                window.scrollTo(0, 0);
               }} 
             >
               {service.name}
@@ -150,7 +200,7 @@ const Support = () => (
     <h3>Support</h3>
     <ul>
   {[
-    { name: "Contact Us", path: "/Contact-Us" },
+    { name: "Contact Us", path: "/contact-us" },
     // Add other links here as needed
   ].map(({ name, path }) => (
     <li key={name}>

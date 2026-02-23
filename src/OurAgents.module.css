@@ -14,6 +14,7 @@
   background: linear-gradient(145deg, #ddcdcd, #f1f1f1); /* Soft gradient background */
   border-radius: 10px; /* Rounded corners for the container */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  text-align: center;
 }
 
 .OurAgentsTitle {
@@ -23,7 +24,7 @@
   border-bottom: 5px solid #ff7043; /* Underline with accent color */
   display: inline-block; /* Makes the border only under the title */
   padding-bottom: 10px; /* Spacing below the title text */
-  text-align: left; /* Align text to the left */
+  text-align: center;
   font-weight: bold; /* Bold title for emphasis */
 }
 
@@ -46,12 +47,13 @@
   border-radius: 12px; /* More rounded corners */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
   line-height: 1.7; /* Improved line height for clarity */
-  text-align: justify; /* Justify text for better alignment */
+  text-align: center;
 }
 
 .OurAgentsWriteUp p {
   margin-bottom: 20px; /* Spacing between paragraphs */
   transition: color 0.3s ease; /* Smooth color transition */
+  text-align: center;
 }
 
 .OurAgentsWriteUp strong {

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Dried Ginger illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#b36a1f"/>
+      <stop offset="1" stop-color="#4c2b10"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <g fill="#e5b273" stroke="#c38545" stroke-width="10">
+    <rect x="360" y="360" width="230" height="120" rx="55"/>
+    <rect x="520" y="300" width="220" height="120" rx="55"/>
+    <rect x="640" y="400" width="220" height="120" rx="55"/>
+    <rect x="470" y="460" width="190" height="105" rx="50"/>
+  </g>
+  <text x="600" y="150" fill="#ffffff" font-size="64" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700">DRIED GINGER</text>
+</svg>
