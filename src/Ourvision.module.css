@@ -11,7 +11,7 @@
     max-width: 1200px; /* Increased maximum width for larger screens */
     margin: 0 auto; /* Center the container */
     padding: 40px 20px; /* Increased padding for a spacious look */
-    background: linear-gradient(145deg, #ddcdcd, #f1f1f1); /* Soft gradient background */
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.9), rgba(243, 248, 253, 0.88)); /* Soft gradient background */
     border-radius: 10px; /* Rounded corners for the container */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
   }

@@ -10,9 +10,6 @@ const OurStrategy = () => {
       <div className={styles.OurStrategyContentContainer}>
         <h2 className={styles.OurStrategyTitle}>
         </h2>
-        <p className={styles.OurStrategyIntro}>
-        The three primary business segments of Khadesh Global Integrated Services Limited are Agricultural Commodities and Local Supply. These divisions handle all aspects of the company's supply chain solutions.
-        </p>
         <div className={styles.OurStrategyWriteUp}>
           <p>
           By offering complete supply chain solutions on both ends of the market, we skilfully manage relationships by establishing connections between commodity-producing and consuming nations.

@@ -1,6 +1,6 @@
 /* Company Overview Section */
 .company-overview {
-  background: linear-gradient(145deg, #ddcdcd, #f1f1f1); /* Soft gradient background */
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.9), rgba(243, 248, 253, 0.88)); /* Soft gradient background */
   padding: 40px 30px; /* Padding for breathing space */
   border-radius: 12px; /* Slightly rounded corners */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */

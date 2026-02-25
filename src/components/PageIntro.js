@@ -4,7 +4,7 @@ const INTRO_BY_PATH = {
   "/": {
     title: "Cultivating Trust, Exporting Excellence",
     subtitle: "Integrated sourcing, commodities, and project services built for reliable delivery.",
-    stats: ["12+ Product Lines", "Africa to Global Markets", "Value-Led Operations"],
+    stats: ["Africa to Global Markets", "Value-Led Operations"],
   },
   "/project-management": {
     title: "Execution With Clarity",
