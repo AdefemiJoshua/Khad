@@ -55,10 +55,12 @@ export default function Header({ isDarkTheme, onToggleTheme }) {
       position="sticky"
       elevation={0}
       sx={{
-        background: "linear-gradient(115deg, rgba(6, 21, 47, 0.94), rgba(14, 58, 110, 0.9))",
+        background:
+          "linear-gradient(110deg, rgba(223, 236, 255, 0.92) 0%, rgba(248, 244, 236, 0.94) 100%)",
+        color: "#0a214e",
         backdropFilter: "blur(10px)",
-        borderBottom: "1px solid rgba(255, 255, 255, 0.22)",
-        boxShadow: "0 14px 26px rgba(6, 18, 43, 0.24)",
+        borderBottom: "1px solid rgba(10, 33, 78, 0.16)",
+        boxShadow: "0 10px 20px rgba(10, 33, 78, 0.12)",
       }}
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-between", py: 0.5 }}>
@@ -175,7 +177,7 @@ export default function Header({ isDarkTheme, onToggleTheme }) {
                   py: 0.7,
                   borderRadius: 999,
                   fontWeight: 600,
-                  color: "white",
+                  color: "#0a214e",
                   border: "1px solid transparent",
                   transition: "all 0.2s ease",
                   "&:hover": {
