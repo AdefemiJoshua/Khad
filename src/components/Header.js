@@ -78,27 +78,31 @@ export default function Header({ isDarkTheme, onToggleTheme }) {
               <Box
                 component="span"
                 sx={{
-                  width: { xs: 90, md: 110 },
-                  height: { xs: 40, md: 44 },
+                  width: { xs: 120, md: 160 },
+                  height: { xs: 44, md: 56 },
                   borderRadius: 1.5,
-                  border: "1px solid rgba(255,255,255,0.5)",
+                  border: "1px solid rgba(255,255,255,0.7)",
                   bgcolor: "#fff",
-                  boxShadow: "0 5px 14px rgba(0, 0, 0, 0.26)",
+                  boxShadow: "0 8px 20px rgba(0, 0, 0, 0.34)",
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  overflow: "hidden",
+                  position: "relative",
+                  overflow: "visible",
                 }}
               >
                 <Box
                   component="img"
-                  src="/Main%20Logo.png"
+                  src="/main-logo-tight.png"
                   alt="Khadesh Global logo"
                   sx={{
-                    width: "100%",
-                    height: "100%",
+                    width: { xs: 190, md: 250 },
+                    height: { xs: 72, md: 88 },
                     objectFit: "contain",
-                    transform: "scale(1.45)",
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
                     transformOrigin: "center center",
                   }}
                 />
