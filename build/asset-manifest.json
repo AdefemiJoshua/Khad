@@ -1,17 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.e9644d55.chunk.css",
-    "main.js": "/static/js/main.3cbd3cef.chunk.js",
-    "main.js.map": "/static/js/main.3cbd3cef.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.91560102.js",
-    "runtime~main.js.map": "/static/js/runtime~main.91560102.js.map",
-    "static/js/2.2774a355.chunk.js": "/static/js/2.2774a355.chunk.js",
-    "static/js/2.2774a355.chunk.js.map": "/static/js/2.2774a355.chunk.js.map",
-    "static/js/3.1af95c37.chunk.js": "/static/js/3.1af95c37.chunk.js",
-    "static/js/3.1af95c37.chunk.js.map": "/static/js/3.1af95c37.chunk.js.map",
+    "main.css": "/static/css/main.82cc196a.chunk.css",
+    "main.js": "/static/js/main.59105094.chunk.js",
+    "main.js.map": "/static/js/main.59105094.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.b53e2343.js",
+    "runtime~main.js.map": "/static/js/runtime~main.b53e2343.js.map",
+    "static/js/2.ee34b800.chunk.js": "/static/js/2.ee34b800.chunk.js",
+    "static/js/2.ee34b800.chunk.js.map": "/static/js/2.ee34b800.chunk.js.map",
+    "static/js/3.e01201f1.chunk.js": "/static/js/3.e01201f1.chunk.js",
+    "static/js/3.e01201f1.chunk.js.map": "/static/js/3.e01201f1.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.e4a3b44d24d48ff88e1a910f19064002.js": "/precache-manifest.e4a3b44d24d48ff88e1a910f19064002.js",
+    "precache-manifest.b5cc10a331734cd30290502e936e64c3.js": "/precache-manifest.b5cc10a331734cd30290502e936e64c3.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.e9644d55.chunk.css.map": "/static/css/main.e9644d55.chunk.css.map"
+    "static/css/main.82cc196a.chunk.css.map": "/static/css/main.82cc196a.chunk.css.map",
+    "static/media/SESAME.png": "/static/media/SESAME.dedcc02b.png",
+    "static/media/Sheabutter.png": "/static/media/Sheabutter.c9a0c3ca.png",
+    "static/media/W240.png": "/static/media/W240.320e0d36.png",
+    "static/media/W320.png": "/static/media/W320.b20773a6.png",
+    "static/media/como.jpg": "/static/media/como.b4f41de2.jpg",
+    "static/media/driedginger.png": "/static/media/driedginger.2e90aca3.png",
+    "static/media/driedhibiscusflower.png": "/static/media/driedhibiscusflower.d71ff3c0.png",
+    "static/media/soyabeans.png": "/static/media/soyabeans.90245fed.png"
   }
 }

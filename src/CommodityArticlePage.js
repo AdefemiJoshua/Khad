@@ -101,7 +101,7 @@ const ARTICLES = {
       "Physical Specification: Based on buyer's specification",
       "Quantity: Based on buyer's specification",
       "Price: Negotiable / Metric Tonne",
-      "Trial Order: 10 Metric Tonnes",
+      "Trial Order: 1 Metric Tonne",
       "Trade Process: FOB/CIF",
       "Payment Method: 100% irrevocable & confirmed L/C at sight",
       "Shipping Time: 15 to 25 days after confirmation of L/C",
@@ -484,18 +484,6 @@ export default function CommodityArticlePage() {
                 </section>
 
                 <section className={styles.section}>
-                  <h3>Top Exporting & Importing Countries of Shea Butter</h3>
-                  {article.markets.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
-                  <ListBlock items={article.productionRanks} />
-                  <p>
-                    Shea butter produced in Nigeria is known for good quality and high volume, especially during the
-                    peak period of June to November.
-                  </p>
-                </section>
-
-                <section className={styles.section}>
                   <img src={article.image} alt="Shea Butter - Neogric" className={styles.inlineImage} />
                   <p className={styles.caption}>Shea Butter -Khadeshglobal-Redefining The Agric Supply Chain In Africa</p>
                 </section>
@@ -512,30 +500,6 @@ export default function CommodityArticlePage() {
                   <ListBlock items={article.grades} />
                   <p>Export-grade refined shea butter commonly expects:</p>
                   <ListBlock items={article.exportSpecs} />
-                </section>
-
-                <section className={styles.section}>
-                  <h3>How To Safely Source Your Produce</h3>
-                  <ListBlock items={article.sourcingTips} />
-                </section>
-
-                <section className={styles.section}>
-                  <h3>International Price of Shea Butter Per Metric Ton</h3>
-                  <p>{article.pricingNote}</p>
-                  <p>
-                    Final pricing depends on grade, quantity, season, logistics, freight, import duties, and buyer-seller
-                    relationship.
-                  </p>
-                </section>
-
-                <section className={styles.section}>
-                  <h3>How To Pay For Your Produce</h3>
-                  <ListBlock items={article.paymentMethods} />
-                </section>
-
-                <section className={styles.section}>
-                  <h3>Shipping & Delivery Terms</h3>
-                  <ListBlock items={article.shippingNotes} />
                 </section>
 
                 <section className={styles.section}>
