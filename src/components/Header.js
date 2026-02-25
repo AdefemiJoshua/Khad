@@ -78,12 +78,13 @@ export default function Header({ isDarkTheme, onToggleTheme }) {
               <Box
                 component="span"
                 sx={{
-                  width: { xs: 120, md: 160 },
-                  height: { xs: 44, md: 56 },
-                  borderRadius: 1.5,
-                  border: "1px solid rgba(255,255,255,0.7)",
-                  bgcolor: "#fff",
-                  boxShadow: "0 8px 20px rgba(0, 0, 0, 0.34)",
+                  width: { xs: 180, md: 260 },
+                  height: { xs: 70, md: 96 },
+                  borderRadius: 0,
+                  border: "none",
+                  background: "transparent",
+                  backdropFilter: "none",
+                  boxShadow: "none",
                   display: "inline-flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -96,14 +97,15 @@ export default function Header({ isDarkTheme, onToggleTheme }) {
                   src="/main-logo-tight.png"
                   alt="Khadesh Global logo"
                   sx={{
-                    width: { xs: 190, md: 250 },
-                    height: { xs: 72, md: 88 },
+                    width: { xs: 360, md: 470 },
+                    height: { xs: 138, md: 180 },
                     objectFit: "contain",
                     position: "absolute",
                     top: "50%",
                     left: "50%",
                     transform: "translate(-50%, -50%)",
                     transformOrigin: "center center",
+                    filter: "drop-shadow(0 3px 10px rgba(0, 0, 0, 0.28))",
                   }}
                 />
               </Box>
