@@ -62,6 +62,11 @@
   .AboutusWriteUp p:hover {
     color: #d35400; /* Change text color on hover */
   }
+
+  .AboutusWriteUp a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
   
   /* Hero Section */
   .hero-section {
