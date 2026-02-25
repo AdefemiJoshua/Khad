@@ -417,7 +417,7 @@ const ARTICLES = {
     ],
     packaging: [
       "Standard export-safe packaging with strong handling control.",
-      "1kg / 5kg / 10kg per carton, or based on buyer request."
+      "1kg / 5kg / 10kg per carton, or based on buyer's request."
     ]
   }
 };
