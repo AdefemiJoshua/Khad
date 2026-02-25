@@ -1294,11 +1294,25 @@ body[data-theme="dark"] .mobile-quick-nav .Mui-selected {
     background: #0b1f3a;
     transform: none;
   }
+
+  .main-content[data-page="home"] .hero-section {
+    height: clamp(210px, 34vh, 300px);
+  }
+
+  .main-content[data-page="home"] .hero-image {
+    object-fit: cover;
+    background: transparent;
+    transform: scale(1.02);
+  }
 }
 
 @media (max-width: 600px) {
   .hero-section {
     height: clamp(150px, 24vh, 200px);
+  }
+
+  .main-content[data-page="home"] .hero-section {
+    height: clamp(190px, 30vh, 260px);
   }
 
   .main-content {
