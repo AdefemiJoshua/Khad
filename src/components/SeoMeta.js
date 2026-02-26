@@ -1,17 +1,21 @@
 import { useEffect } from "react";
 
 const DEFAULT_META = {
-  title: "Khadesh Global | Agricultural Commodities and Project Services",
+  title: "Khadesh Global | Agricultural Commodities Export and Supply",
   description:
     "Khadesh Global Integrated Services Limited delivers agricultural commodities and project management services across global markets.",
+  keywords:
+    "agricultural commodities, commodity export, Nigeria agricultural export, shea butter export, sesame seeds export, soybean export, dried hibiscus export, dried ginger export",
   image: "/main-logo-512.png",
 };
 
 const ROUTE_META = {
   "/": {
-    title: "Khadesh Global | Global Agricultural Trading",
+    title: "Agricultural Commodities Exporter | Khadesh Global",
     description:
-      "Explore Khadesh Global's agricultural commodities and integrated supply chain services.",
+      "Khadesh Global exports agricultural commodities from Nigeria and Africa to global buyers with quality assurance and reliable delivery.",
+    keywords:
+      "agricultural commodities, agricultural commodities exporter, Nigeria commodity export, Africa commodity supplier",
   },
   "/project-management": {
     title: "Project Management | Khadesh Global",
@@ -19,9 +23,11 @@ const ROUTE_META = {
       "Professional project management services delivered with structured execution and measurable outcomes.",
   },
   "/commodities": {
-    title: "Commodities | Khadesh Global",
+    title: "Agricultural Commodities Portfolio | Khadesh Global",
     description:
-      "Browse Khadesh Global's agricultural commodities portfolio.",
+      "Browse Khadesh Global's agricultural commodities including shea butter, sesame seeds, soya beans, dried hibiscus flower, dried ginger, and cashew nuts.",
+    keywords:
+      "agricultural commodities list, shea butter export, sesame seeds supplier, soybean exporter, dried hibiscus exporter, dried ginger supplier, cashew nuts w240 w320",
   },
   "/our-agents": {
     title: "Our Agents | Khadesh Global",
@@ -95,23 +101,92 @@ const setMeta = (attribute, key, content) => {
   tag.setAttribute("content", content);
 };
 
+const setCanonical = (href) => {
+  let link = document.head.querySelector("link[rel='canonical']");
+  if (!link) {
+    link = document.createElement("link");
+    link.setAttribute("rel", "canonical");
+    document.head.appendChild(link);
+  }
+  link.setAttribute("href", href);
+};
+
+const setJsonLd = (id, data) => {
+  let script = document.head.querySelector(`script[data-seo='${id}']`);
+  if (!script) {
+    script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.setAttribute("data-seo", id);
+    document.head.appendChild(script);
+  }
+  script.textContent = JSON.stringify(data);
+};
+
 export default function SeoMeta({ pathname }) {
   useEffect(() => {
     const normalizedPath = pathname.toLowerCase();
     const routeMeta = ROUTE_META[normalizedPath] || {};
     const meta = { ...DEFAULT_META, ...routeMeta };
+    const canonicalUrl = `${window.location.origin}${pathname}`;
+    const isCommodityArticle = normalizedPath.startsWith("/commodities/");
+    const ogType = isCommodityArticle ? "article" : "website";
 
     document.title = meta.title;
 
     setMeta("name", "description", meta.description);
+    setMeta("name", "keywords", meta.keywords);
+    setMeta("name", "robots", "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1");
+    setMeta("name", "author", "Khadesh Global Integrated Services Limited");
+    setMeta("name", "language", "en");
     setMeta("property", "og:title", meta.title);
     setMeta("property", "og:description", meta.description);
-    setMeta("property", "og:type", "website");
+    setMeta("property", "og:type", ogType);
+    setMeta("property", "og:site_name", "Khadesh Global");
+    setMeta("property", "og:locale", "en_NG");
     setMeta("property", "og:image", meta.image);
+    setMeta("property", "og:url", canonicalUrl);
     setMeta("name", "twitter:card", "summary_large_image");
     setMeta("name", "twitter:title", meta.title);
     setMeta("name", "twitter:description", meta.description);
     setMeta("name", "twitter:image", meta.image);
+    setMeta("name", "twitter:url", canonicalUrl);
+    setMeta("name", "twitter:site", "@khadeshglobal");
+    setMeta("name", "twitter:creator", "@khadeshglobal");
+    setCanonical(canonicalUrl);
+
+    const origin = window.location.origin;
+    setJsonLd("organization", {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Khadesh Global Integrated Services Limited",
+      url: origin,
+      logo: `${origin}/url-logo-512.png`,
+    });
+
+    setJsonLd("website", {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: "Khadesh Global",
+      url: origin,
+      potentialAction: {
+        "@type": "SearchAction",
+        target: `${origin}/commodities`,
+        "query-input": "required name=search_term_string",
+      },
+    });
+
+    setJsonLd("webpage", {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      name: meta.title,
+      description: meta.description,
+      url: canonicalUrl,
+      isPartOf: {
+        "@type": "WebSite",
+        name: "Khadesh Global",
+        url: origin,
+      },
+    });
   }, [pathname]);
 
   return null;
