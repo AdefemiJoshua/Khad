@@ -3,12 +3,12 @@
   "name": "Khadesh Global",
   "icons": [
     {
-      "src": "main-logo-192.png",
+      "src": "url-logo-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "main-logo-512.png",
+      "src": "url-logo-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
