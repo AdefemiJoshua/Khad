@@ -1,12 +1,6 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.khadeshglobal.com" }],
-      "destination": "https://khadeshglobal.com/:path*",
-      "permanent": true
-    },
-    {
       "source": "/contact/:path*",
       "destination": "/contact-us",
       "permanent": true
