@@ -1,6 +1,51 @@
 {
   "redirects": [
     {
+      "source": "/author/:path*",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/services/:path*",
+      "destination": "/local-supply",
+      "permanent": true
+    },
+    {
+      "source": "/printing-services/:path*",
+      "destination": "/project-management",
+      "permanent": true
+    },
+    {
+      "source": "/digital-advertising/:path*",
+      "destination": "/project-management",
+      "permanent": true
+    },
+    {
+      "source": "/shop/:path*",
+      "destination": "/commodities",
+      "permanent": true
+    },
+    {
+      "source": "/cart/:path*",
+      "destination": "/commodities",
+      "permanent": true
+    },
+    {
+      "source": "/checkout/:path*",
+      "destination": "/commodities",
+      "permanent": true
+    },
+    {
+      "source": "/my-account/:path*",
+      "destination": "/contact-us",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-:path*",
+      "destination": "/commodities",
+      "permanent": true
+    },
+    {
       "source": "/contact/:path*",
       "destination": "/contact-us",
       "permanent": true
