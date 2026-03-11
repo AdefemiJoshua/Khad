@@ -252,9 +252,13 @@ const MainContent = () => {
           <Route path="/sustainability" element={<Sustainability />} />
           <Route path="/quality-assurance-compliance" element={<QualityAssuranceCompliance />} />
           <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/contact/*" element={<Navigate replace to="/contact-us" />} />
           <Route path="/our-value-proposition" element={<OurValueProposition />} />
           <Route path="/our-partners" element={<OurPartners />} />
           <Route path="/about-us" element={<Aboutus />} />
+          <Route path="/about/*" element={<Navigate replace to="/about-us" />} />
+          <Route path="/portfolio/*" element={<Navigate replace to="/commodities" />} />
+          <Route path="/customized-packaging/*" element={<Navigate replace to="/local-supply" />} />
           <Route path="/our-mission" element={<Ourmission />} />
           <Route path="/our-vision" element={<Ourvision />} />
           <Route path="/our-commitment" element={<Ourcommitment />} />
