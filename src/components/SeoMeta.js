@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { getCommoditySeo } from "../seo/commoditySeo";
 
 const DEFAULT_META = {
   title: "Khadesh Global | Agricultural Commodities Export and Supply",
@@ -126,7 +127,9 @@ export default function SeoMeta({ pathname }) {
   useEffect(() => {
     const normalizedPath = pathname.toLowerCase();
     const routeMeta = ROUTE_META[normalizedPath] || {};
-    const meta = { ...DEFAULT_META, ...routeMeta };
+    const commoditySlug = normalizedPath.startsWith("/commodities/") ? normalizedPath.split("/")[2] : null;
+    const commodityMeta = getCommoditySeo(commoditySlug);
+    const meta = { ...DEFAULT_META, ...routeMeta, ...(commodityMeta || {}) };
     const canonicalUrl = `${window.location.origin}${pathname}`;
     const isCommodityArticle = normalizedPath.startsWith("/commodities/");
     const ogType = isCommodityArticle ? "article" : "website";
@@ -161,6 +164,7 @@ export default function SeoMeta({ pathname }) {
       name: "Khadesh Global Integrated Services Limited",
       url: origin,
       logo: `${origin}/url-logo-512.png`,
+      areaServed: ["Nigeria", "United Kingdom", "United States", "European Union"],
     });
 
     setJsonLd("website", {
@@ -187,6 +191,24 @@ export default function SeoMeta({ pathname }) {
         url: origin,
       },
     });
+
+    if (isCommodityArticle && commodityMeta) {
+      setJsonLd("product", {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        name: commodityMeta.name,
+        category: commodityMeta.category,
+        description: meta.description,
+        brand: {
+          "@type": "Brand",
+          name: "Khadesh Global",
+        },
+        url: canonicalUrl,
+      });
+    } else {
+      const existing = document.head.querySelector("script[data-seo='product']");
+      if (existing) existing.remove();
+    }
   }, [pathname]);
 
   return null;
