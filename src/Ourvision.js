@@ -9,8 +9,10 @@ const Ourvision = () => {
       <HeroSection /> {/* Include the HeroSection */}
       <div className={styles.OurvisionContentContainer}>
         <div className={styles.OurvisionWriteUp}>
+          <h2>Our Vision</h2>
           <p>
-            At Khadesh Global Integrated Services Limited, our vision is to establish ourselves as a globally recognized leader in providing comprehensive, integrated solutions that address the diverse needs of industries and businesses around the world. We are committed to driving sustainable growth by leveraging cutting-edge technologies, strategic partnerships, and innovative approaches. Our aim is not only to deliver exceptional services but also to empower businesses with the tools and support they need to thrive in an ever-evolving global marketplace. By aligning our solutions with long-term sustainability and growth, we strive to create lasting value for our clients, partners, and communities, positioning ourselves as a trusted partner in their success.
+            To become a trusted global partner in agricultural commodity trade and project management, delivering reliable,
+            ethical, and sustainable solutions from Nigeria to the world.
           </p>
         </div>
       </div>
@@ -23,7 +25,11 @@ const Ourvision = () => {
 const HeroSection = () => (
   <section className="hero-section">
     <div className="hero-image-container">
-      <img src="/Ourvision.ico" alt="Agricultural Commodities" className="hero-image" />
+      <img
+        src="/Ourvision.ico"
+        alt="agricultural trade company Nigeria global market connection"
+        className="hero-image"
+      />
       <div className="hero-overlay">
         <h2>Our Vision</h2>
       </div>

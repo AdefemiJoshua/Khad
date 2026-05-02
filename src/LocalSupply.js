@@ -10,76 +10,39 @@ const LocalSupply = () => {
       <div className={styles.LocalSupplyContentContainer}>
      
         <div className={styles.LocalSupplyWriteUp}>
+          <h2>Local Supply</h2>
           <p>
-          Local Supply is a pioneering initiative designed to empower local communities by facilitating access to essential goods and services while promoting local businesses. Our Mission is to strengthen the local economy by connecting consumers directly with suppliers in their area, ensuring that communities can thrive through sustainable practices and responsible sourcing.          </p>
-
+            Khadesh Global supports the local supply and distribution of agricultural commodities within Nigeria by
+            connecting farmers, aggregators, and local buyers through an efficient and structured trade network.
+          </p>
           <p>
-          At Local Supply, we recognize the importance of supporting local economies. By prioritizing local suppliers, we help create jobs, reduce transportation emissions, and foster community resilience. Our platform offers a user-friendly interface that allows consumers to easily browse, discover, and purchase products from local vendors, ensuring that they have access to high-quality, fresh, and unique items that reflect the character of their community.          </p>
-<p>
-<strong>Quality Control </strong>
-</p>
-<p>
-Product Testing and Certification Before Shipment
-Our inhouse Quality Assurance (QA) and Quality Control (QC) (operations) initiatives play key roles in guaranteeing the safety and quality of our products.
-</p>
+            We facilitate the movement of agricultural products from producing communities to local markets, processors,
+            and bulk buyers, ensuring fair access, consistent supply, and reduced market inefficiencies.
+          </p>
 
-<p>
-We work to the specifications of our customers to ensure all products are fully supported with Certificate of Analysis from NAQS or the necessary technical information to comply with destination regulatory requirements.
-</p>
+          <h3>Our Role in Local Trade</h3>
+          <p>We strengthen local agricultural trade by:</p>
+          <ul>
+            <li>Sourcing directly from smallholder farmers</li>
+            <li>Aggregating commodities for local buyers and processors</li>
+            <li>Supporting efficient distribution across key markets in Nigeria</li>
+            <li>Improving access to reliable and quality farm produce</li>
+          </ul>
 
-<p>
-<strong>Our Clients </strong>
-</p>
-<p>
-    <li>
-Foreign Buyers & Importers.
-</li>
-</p>
-<p>
-    <li>
-    Supermarkets & Grocery Chains.
-    </li>
-</p>
-<p>
-    <li>
-    Local Food Distributors & Wholesalers.
-    </li>
-</p>
-<p>
-    <li>
-    Local Food Retailers.
-    </li>
-</p>
-<p>
-    <li>
-    Hotels and Catering Institutions.
-    </li>
-</p>
-<p>
-    <li>
-    Food Processors.
-    </li>
-</p>
-<p>
-    <li>
-    Relief & Charitable Organizations.
-    </li>
-</p>
-<p>
-    <li>
-    Tech Companies.
-    </li>
-</p>
-<p>
-    <li>
-   Commodity Trading Companies.
-    </li>
-</p>
-<p>
-    <li>
-    Renewnable Energy Companies.
-    </li>
-</p>
+          <h3>Quality & Reliability</h3>
+          <p>
+            All locally supplied commodities are handled with proper sorting, grading, and quality checks to ensure they
+            meet buyer expectations and market standards.
+          </p>
+
+          <h3>Who We Serve Locally</h3>
+          <ul>
+            <li>Local food processors</li>
+            <li>Wholesalers and distributors</li>
+            <li>Market traders and aggregators</li>
+            <li>Institutional buyers</li>
+            <li>Hospitality and food service businesses</li>
+          </ul>
 
         </div>
       </div>
@@ -92,7 +55,7 @@ Foreign Buyers & Importers.
 const HeroSection = () => (
   <section className="hero-section">
     <div className="hero-image-container">
-      <img src="/LocalSupply.ico" alt="Agricultural Commodities" className="hero-image" />
+      <img src="/LocalSupply.ico" alt="local agricultural supply Nigeria market distribution" className="hero-image" />
       <div className="hero-overlay">
       <h2>Local Supply</h2>
       </div>

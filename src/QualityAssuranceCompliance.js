@@ -7,7 +7,11 @@ export default function QualityAssuranceCompliance() {
     <div className={styles.SustainabilitySection}>
       <section className="hero-section">
         <div className="hero-image-container">
-          <img src="/sustainability.ico" alt="Quality Assurance and Compliance" className="hero-image" />
+          <img
+            src="/sustainability.ico"
+            alt="agricultural export compliance Nigeria laboratory testing"
+            className="hero-image"
+          />
           <div className="hero-overlay">
             <h2>Quality Assurance & Compliance</h2>
           </div>
@@ -18,61 +22,58 @@ export default function QualityAssuranceCompliance() {
         <div className={styles.SustainabilityWriteUp}>
           <h2>QUALITY ASSURANCE & COMPLIANCE</h2>
           <p>
-            Khadesh Global supplies agricultural commodities in compliance with European Union food safety regulations,
-            including EU General Food Law (Regulation EC 178/2002) and international standards.
-          </p>
-          <p>Full laboratory analysis and traceability documentation are available upon request.</p>
-
-          <h3>HACCP-Based Quality Management System</h3>
-          <p>
-            Khadesh Global operates under a Hazard Analysis and Critical Control Points (HACCP) based food safety
-            management system in accordance with Regulation (EC) No 852/2004 on hygiene of foodstuffs, Codex
-            Alimentarius HACCP Guidelines, and EU General Food Law (EC 178/2002).
+            At Khadesh Global, we supply agricultural commodities from Nigeria that are carefully sourced, processed, and
+            exported in compliance with international food safety and quality standards.
           </p>
           <p>
-            Our HACCP certification confirms that operations systematically identify, evaluate, and control food safety
-            hazards across sourcing, processing, storage, and export.
+            We ensure every shipment meets strict quality requirements through structured monitoring, testing, and
+            documentation across the entire supply chain.
           </p>
 
-          <h3>Critical Control Measures</h3>
-          <p>To ensure EU compliance, we implement:</p>
+          <h3>Quality Management System (HACCP-Based)</h3>
+          <p>
+            We operate a HACCP-based food safety system aligned with Codex Alimentarius guidelines and international
+            hygiene standards. This ensures food safety risks are properly identified and controlled from sourcing to
+            export.
+          </p>
+
+          <h3>Quality Control & Testing</h3>
+          <p>To ensure compliance with global standards, we conduct strict quality checks, including:</p>
           <ul>
-            <li>Mycotoxin (Aflatoxin) monitoring and control</li>
-            <li>Pesticide residue screening in line with EU MRL standards</li>
+            <li>Aflatoxin (mycotoxin) monitoring</li>
+            <li>Pesticide residue screening (EU MRL compliant)</li>
             <li>Microbiological testing (Salmonella, E. coli, Total Plate Count)</li>
             <li>Heavy metal analysis</li>
-            <li>Moisture content monitoring to prevent mold development</li>
+            <li>Moisture control to prevent spoilage</li>
           </ul>
-          <p>All testing can be conducted through accredited third-party laboratories upon buyer request.</p>
+          <p>Third-party laboratory testing is available upon buyer request.</p>
 
           <h3>Traceability System</h3>
-          <p>Each shipment is traceable by:</p>
+          <p>Every shipment is fully traceable from farm to export through:</p>
           <ul>
-            <li>Batch Number</li>
-            <li>Production Date</li>
-            <li>Supplier Code</li>
-            <li>Container Number</li>
-            <li>Export Documentation Reference</li>
+            <li>Batch numbers</li>
+            <li>Supplier codes (smallholder farmers)</li>
+            <li>Production and processing records</li>
+            <li>Container tracking details</li>
+            <li>Export documentation references</li>
           </ul>
-          <p>
-            This ensures full compliance with EU traceability requirements under Regulation (EC) 178/2002.
-          </p>
+          <p>This ensures full transparency and accountability across the supply chain.</p>
 
-          <h3>Export Documentation & Compliance Support</h3>
-          <p>We provide the following documentation:</p>
+          <h3>Export Documentation</h3>
+          <p>We provide complete export compliance documentation, including:</p>
           <ul>
             <li>Phytosanitary Certificate</li>
             <li>Certificate of Origin</li>
             <li>Commercial Invoice & Packing List</li>
             <li>Fumigation Certificate</li>
-            <li>Third-Party Inspection Certificate (SGS/Bureau Veritas upon request)</li>
-            <li>Laboratory Analysis Reports</li>
+            <li>Third-party inspection reports (SGS / Bureau Veritas upon request)</li>
+            <li>Laboratory analysis reports</li>
           </ul>
 
           <p>
-            Khadesh Global is committed to supplying safe, compliant, and high-quality agricultural commodities that
-            meet European Union food safety standards. Continuous monitoring, documentation, and improvement are
-            integral to our export operations.
+            Khadesh Global is committed to delivering safe, compliant, and high-quality agricultural commodities from
+            Nigeria to global markets. We maintain strict quality control, transparent sourcing, and continuous
+            improvement across our operations.
           </p>
         </div>
       </div>

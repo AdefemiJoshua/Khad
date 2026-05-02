@@ -6,90 +6,44 @@ import styles from './ProjectManagement.module.css'; // Ensure the correct path
 // Company Overview Component
 const CompanyOverview = () => (
   <section className="company-overview">
-    <h2>Project Management Consulting Services</h2>
-    
-    
-    
-    
-    <ul> {/* Use <ul> for lists */}
-    
+    <h2>Project Management Consulting for Agribusiness, Manufacturers & Public Sector</h2>
     <p>
-   At Khadesh Global Integrated Services Limited, we are committed to delivering exceptional Project management services across a variety of sectors. Our approach is built on a comprehensive framework that ensures every phase of a project is handled with precision and professionalism. With the use of Project Management Tools, from planning to execution, our focus is on achieving optimal results that align with our clients’ objectives. 
+      Khadesh Global provides project management consulting services for agribusinesses, manufacturers, government
+      ministries, agencies, and NGOs. We support the planning, coordination, and execution of projects across
+      agriculture, manufacturing, infrastructure, and other key sectors in Nigeria and beyond.
+    </p>
+    <p>
+      Our approach focuses on delivering efficient, well-coordinated, and results-driven projects that meet client
+      objectives.
     </p>
 
-    <p>
-    <li>
-      </li>
-      <li>
-        <strong>Project Planning and Strategy:</strong> Developing a comprehensive project plan, including scope, goals, deliverables, timelines, and resources.
-      </li>
-      <li>
-        <strong>Project Execution and Implementation:</strong> Overseeing project execution, coordinating tasks, managing teams, and ensuring adherence to project plans.
-      </li>
-      <li>
-        <strong>Risk Management:</strong> Identifying potential risks, developing mitigation strategies, and implementing risk management plans throughout the project lifecycle.
-      </li>
-      <li>
-        <strong>Quality Management:</strong> Ensuring that project deliverables meet quality standards through regular reviews, audits, and process improvements.
-      </li>
-      <li>
-        <strong>Stakeholder Management:</strong> Engaging with stakeholders, managing expectations, and maintaining effective communication to keep everyone informed and aligned.
-      </li>
-      <li>
-        <strong>Cost Management and Budgeting:</strong> Creating and managing project budgets, tracking expenses, and ensuring projects stay within financial constraints.
-      </li>
-      <li>
-        <strong>Project Scheduling:</strong> Developing detailed schedules, setting timelines, and using project management tools to monitor progress.
-      </li>
-      <li>
-        <strong>Change Management:</strong> Managing changes to project scope, timelines, or resources while minimizing disruption to project objectives.
-      </li>
-      <li>
-        <strong>Performance Measurement and Reporting:</strong> Tracking project performance using KPIs, generating reports, and providing insights to ensure project objectives are met.
-      </li>
-      <li>
-        <strong>Resource Management:</strong> Optimizing the allocation and use of human, financial, and material resources to ensure efficiency and productivity.
-      </li>
-      <li>
-        <strong>Project Closeout and Evaluation:</strong> Ensuring all project activities are completed, deliverables are handed over, and lessons learned are documented for future projects.
-      </li>
-      </p>
+    <h3>Core Project Management Services</h3>
+    <ul>
+      <li>Project Planning & Execution – Defined scope, timelines, and structured delivery</li>
+      <li>Agribusiness & Industrial Projects – Farm sourcing, processing, and production coordination</li>
+      <li>Logistics & Supply Chain Management – Efficient movement of goods, materials, and resources</li>
+      <li>Regulatory Compliance – Alignment with government and industry standards</li>
+      <li>Cost & Budget Management – Effective cost control and financial planning</li>
+      <li>Risk Management – Identification and mitigation of operational risks</li>
+      <li>Stakeholder Coordination – Managing communication across partners, agencies, and teams</li>
+      <li>Monitoring & Reporting – Performance tracking and project evaluation</li>
     </ul>
-    <p>
-      These services can be tailored to suit various industries and project types, providing clients with guidance, expertise, and tools to ensure project success.
-    </p>
-    <ul> {/* Use <ul> for lists */}
-      
-    <p>
-    <strong>PROJECT MANAGEMENT CONSULTING IN EXPORT</strong>
-      <li>
-        <strong>Export Project Planning:</strong> Assisting businesses in developing export strategies, identifying target markets, setting objectives, and creating action plans to enter new markets efficiently.
-      </li>
-      <li>
-        <strong>Logistics and Supply Chain Management:</strong> Managing the complexities of international shipping, customs regulations, and supply chain coordination, ensuring smooth and timely delivery of export goods.
-      </li>
-      <li>
-        <strong>Risk Management:</strong> Identifying and mitigating risks related to currency fluctuations, political instability, regulatory changes, and other factors that can impact export operations.
-      </li>
-      <li>
-        <strong>Regulatory Compliance:</strong> Ensuring adherence to export regulations, trade laws, and international standards, reducing the risk of legal issues or delays.
-      </li>
-      <li>
-        <strong>Cost Management and Budgeting:</strong> Managing the costs associated with exporting, such as transportation, tariffs, taxes, and insurance, to maintain profitability.
-      </li>
-      <li>
-        <strong>Quality Assurance:</strong> Maintaining product quality throughout the export process, ensuring that goods meet the quality standards of the destination market.
-      </li>
-      <li>
-        <strong>Stakeholder Management:</strong> Engaging with various stakeholders, such as suppliers, freight forwarders, customs officials, and clients, to ensure effective communication and collaboration.
-      </li>
-      <li>
-        <strong>Documentation and Process Management:</strong> Handling the extensive paperwork and documentation required for export transactions, such as invoices, packing lists, bills of lading, and certificates of origin.
-      </li>
-      <li>
-        <strong>Market Entry and Expansion Projects:</strong> Assisting in market research, identifying potential partners or distributors, and developing strategies for expanding into new regions.
-      </li>
-      </p>
+
+    <h3>Who We Work With</h3>
+    <ul>
+      <li>Agribusiness companies</li>
+      <li>Manufacturers and processing companies</li>
+      <li>Government ministries and agencies</li>
+      <li>NGOs and development organizations</li>
+      <li>Private sector investors and partners</li>
+    </ul>
+
+    <h3>Why Khadesh Global</h3>
+    <ul>
+      <li>Strong experience across agriculture, manufacturing, and infrastructure projects</li>
+      <li>Practical, results-driven project execution</li>
+      <li>Deep understanding of Nigerian operating environment</li>
+      <li>Reliable coordination across multiple stakeholders</li>
     </ul>
   </section>
 );
@@ -114,7 +68,7 @@ const ProjectManagement = () => {
 const HeroSection = () => (
   <section className="hero-section">
     <div className="hero-image-container">
-      <img src="/map.ico" alt="Agricultural Commodities" className="hero-image" />
+      <img src="/map.ico" alt="project management consulting Nigeria agribusiness planning" className="hero-image" />
       <div className="hero-overlay">
         <h2>Project Management</h2>
       </div>

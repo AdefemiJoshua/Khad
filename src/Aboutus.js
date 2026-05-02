@@ -10,27 +10,49 @@ const Aboutus = () => {
       <div className={styles.AboutusContentContainer}>
      
         <div className={styles.AboutusWriteUp}>
+          <h2>About Us</h2>
           <p>
-Welcome to Khadesh Global Integrated Services Limited, a Nigerian and dynamic company established in 2022, dedicated to providing comprehensive solutions and services in various sectors. With a strong commitment to excellence, innovation, and customer satisfaction, we have established ourselves as a trusted partner for businesses seeking top quality support in today's competitive market.
-           </p>
+            Khadesh Global is an agricultural export company in Nigeria, specializing in sourcing and supplying high-quality
+            agricultural commodities to global markets. We export products such as ginger, hibiscus flowers, and sesame
+            seeds, connecting international buyers to reliable supply from Nigeria.
+          </p>
+          <p>
+            As a trusted agricultural export company in Nigeria, we manage the full supply chain—from sourcing and
+            aggregation to quality control, logistics, and international delivery—ensuring efficient and dependable export
+            operations.
+          </p>
+          <p>
+            Our approach is built on consistency, transparency, and long-term partnerships, making it easier for importers,
+            distributors, and manufacturers to source directly from Nigeria with confidence.
+          </p>
 
+          <h3>Agricultural Commodities</h3>
           <p>
-          At Khadesh Global Integrated Services Limited, we believe in the power of integration. We bring together a diverse range of services and expertise to deliver tailored solutions that meet the unique needs of our clients. Our company operates across multiple sectors, including import/export of agricultural commodities, project management consulting and finance enabling us to provide comprehensive support throughout the entire business lifecycle.</p>
-        <p>
-            We are delighted to introduce Khadesh Global Integrated Services Limited, a dynamic and forward-thinking company dedicated to providing comprehensive solutions and services across various sectors. As a trusted partner, we aim to empower businesses and organizations by offering innovative and tailored support to help them thrive in today's competitive landscape. 
-         </p>
+            We supply high-quality agricultural commodities from Nigeria, including ginger, hibiscus flowers, sesame seeds,
+            and other export-ready products, sourced directly from trusted Nigerian farmers and aggregators to meet
+            international market standards. We ensure consistent quality, proper handling, and reliable supply for importers,
+            distributors, and manufacturers across global markets.
+          </p>
+
+          <h3>What We Do</h3>
           <p>
-          In West Africa, we are well represented in The Fedral Republic of Nigeria         
-           </p>
+            Khadesh Global connects global buyers to reliable agricultural commodity supply from Nigeria. We specialize in
+            sourcing, aggregating, and exporting products such as ginger, hibiscus flowers, sesame seeds, soybeans, and
+            cashew nuts from trusted farmers across Nigeria.
+          </p>
           <p>
-         For any enquiry Please contact us At 
-           </p>
-           <a href="mailto:khadeshglobalintegratedservice@gmail.com">
-              khadeshglobalintegratedservice@gmail.com
-             </a> 
-             <p>   
-             We would love to answer your enquires! and We will get back to you promptly.
-             </p> 
+            We help balance supply and demand by providing a structured platform that supports efficient sourcing, quality
+            control, risk management, and international delivery of agricultural commodities. Our focus is to deliver
+            consistent quality, dependable supply chains, and value-added export solutions for importers, distributors, and
+            manufacturers worldwide.
+          </p>
+
+          <h3>Contact</h3>
+          <p>
+            For enquiries, partnerships, or business opportunities:
+            <br />
+            <a href="mailto:khadeshglobalintegratedservice@gmail.com">khadeshglobalintegratedservice@gmail.com</a>
+          </p>
         </div>
       </div>
       <AdditionalSections /> {/* Ensure this component is defined */}
@@ -42,8 +64,13 @@ Welcome to Khadesh Global Integrated Services Limited, a Nigerian and dynamic co
 const HeroSection = () => (
   <section className="hero-section">
     <div className="hero-image-container">
-      <img src="/Aboutus.ico" alt="Agricultural Commodities" className="hero-image" />
+      <img
+        src="/Aboutus.ico"
+        alt="agricultural export company Nigeria sourcing from smallholder farmers"
+        className="hero-image"
+      />
       <div className="hero-overlay">
+        <h2>About Us</h2>
       </div>
     </div>
   </section>

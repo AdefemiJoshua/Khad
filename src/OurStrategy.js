@@ -11,33 +11,48 @@ const OurStrategy = () => {
         <h2 className={styles.OurStrategyTitle}>
         </h2>
         <div className={styles.OurStrategyWriteUp}>
+          <h2>Our Strategy</h2>
           <p>
-          By offering complete supply chain solutions on both ends of the market, we skilfully manage relationships by establishing connections between commodity-producing and consuming nations.
+            Khadesh Global connects agricultural commodity supply from Nigeria to global markets through a structured and
+            reliable supply chain. Our strategy focuses on building strong relationships with smallholder farmers,
+            processors, and buyers to ensure consistent supply and efficient delivery.
+          </p>
 
-          </p>
+          <h3>Supply Chain Integration</h3>
           <p>
-            <strong>Quality and Efficiency</strong>
-            <br />
-            With the goal of building enduring relationships with clients and being their go-to commodity supply partner, Khadesh Global Integrated Services Limited is unwavering in its commitment to providing the best products and outstanding service.
+            We manage the full agricultural supply chain—from sourcing directly from smallholder farmers and aggregating
+            produce to logistics and delivery—connecting farming communities in Nigeria with international markets.
           </p>
-          <p>
-          We transport goods via road, air, and sea always choosing the fastest path between points of origin and destinations. You select whether we deliver to your trade partner, warehouse, or retail location.
-          </p>
-          <p>
-            <strong>Your Gateway to Africa</strong>
-            <br />
-            Khadesh Global Integrated Services Limited provides distinctive market intelligence, knowledge, and experience in Africa as a diversified global commodity trading organisation. We act as your trustworthy entry point into the value chain of commodities in Africa.
-          </p>
-          <p>
-            <strong>Transparency in Trading & Supply</strong>
-            <br />
-            Openness is essential to how we do business. With the use of cutting-edge technologies, we provide total supply chain transparency while ensuring end-to-end consignment tracking and monitoring around the globe.
-          </p>
-          <p>
-            <strong>Continuity of Commodity Supply Chain</strong>
-            <br />
-            By tying together worldwide producers, processors, and consumers, we optimise the flow of goods. To improve our customers' experience, we provide value-added services in addition to effective transportation.
 
+          <h3>Quality & Efficiency</h3>
+          <p>
+            We are committed to delivering high-quality agricultural commodities through careful sourcing, proper handling,
+            and efficient operations. Our focus is to provide consistent supply, competitive pricing, and dependable
+            service.
+          </p>
+
+          <h3>Logistics & Delivery</h3>
+          <p>
+            We transport goods by road, air, and sea, ensuring fast and reliable delivery from farm to destination. We
+            deliver directly to warehouses, processing facilities, or end buyers based on client requirements.
+          </p>
+
+          <h3>Market Access in Africa</h3>
+          <p>
+            We provide access to agricultural commodities sourced from smallholder farmers across Nigeria and Africa,
+            supported by strong local networks and market knowledge.
+          </p>
+
+          <h3>Transparency & Tracking</h3>
+          <p>
+            We maintain transparency across our operations, with clear communication and tracking throughout the supply
+            chain—from farm sourcing to final delivery.
+          </p>
+
+          <h3>Reliable Supply Chain</h3>
+          <p>
+            We connect smallholder farmers, processors, and buyers to ensure a steady flow of agricultural commodities
+            while reducing supply disruptions and improving efficiency.
           </p>
         </div>
       </div>
@@ -50,7 +65,7 @@ const OurStrategy = () => {
 const HeroSection = () => (
   <section className="hero-section">
     <div className="hero-image-container">
-      <img src="/strategy.ico" alt="Agricultural Commodities" className="hero-image" />
+      <img src="/strategy.ico" alt="agricultural supply chain Nigeria farm to export system" className="hero-image" />
       <div className="hero-overlay">
         <h2>Our Strategy</h2>
       </div>

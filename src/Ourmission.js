@@ -10,12 +10,11 @@ const Ourmission = () => {
       <div className={styles.OurmissionContentContainer}>
      
         <div className={styles.OurmissionWriteUp}>
+          <h2>Our Mission</h2>
           <p>
-          Our goal at Khadesh Global Integrated Services Limited is to foster lasting and mutually beneficial relationships with our clients, partners, and stakeholders. We believe that trust, collaboration, and shared goals form the foundation of successful partnerships. By prioritizing open communication, understanding our clients' unique needs, and delivering tailored solutions, we aim to create value that extends beyond immediate results.           
-          </p>
-
-          <p>
-          In addition to this, we are committed to ensuring sustainable growth for all parties involved. This means that our approach is not only focused on short-term gains but also on the long-term success and resilience of our clients’ businesses. We integrate sustainable practices and innovative strategies to help our clients grow while contributing to a broader positive impact—socially, economically, and environmentally. Our dedication to creating lasting value ensures that both our clients and partners thrive in a competitive, ever-changing global market.
+            At Khadesh Global, our mission is to source and deliver quality agricultural commodities from Nigeria to global
+            markets, while providing effective project management solutions that ensure efficiency, transparency, and value
+            creation.
           </p>
 
         </div>
@@ -29,8 +28,13 @@ const Ourmission = () => {
 const HeroSection = () => (
   <section className="hero-section">
     <div className="hero-image-container">
-      <img src="/Ourmission.ico" alt="Agricultural Commodities" className="hero-image" />
+      <img
+        src="/Ourmission.ico"
+        alt="agricultural sourcing Nigeria smallholder farmers"
+        className="hero-image"
+      />
       <div className="hero-overlay">
+        <h2>Our Mission</h2>
       </div>
     </div>
   </section>

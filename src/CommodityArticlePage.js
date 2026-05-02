@@ -196,76 +196,69 @@ const ARTICLES = {
   },
   "dried-hibiscus-flower": {
     label: "Dried Hibiscus Flower",
-    heading: "DRIED HIBISCUS FLOWER",
-    title: "Hibiscus sabdariffa",
+    heading: "HIBISCUS FLOWER",
+    title: "Dried Hibiscus Flower Export from Nigeria (Hibiscus sabdariffa)",
     image: driedHibiscusImage,
     intro: [
-      "The dried hibiscus flower, scientifically known as Hibiscus sabdariffa, is a tropical plant renowned for its vibrant red petals and numerous health benefits.",
-      "Native to Africa, this flower has been embraced by cultures worldwide for its unique flavour and medicinal properties.",
-      "When dried, hibiscus flowers are used in teas, beverages, herbal medicine, and cosmetic formulations.",
-      "At Khadesh Global, we specialize in the supply and export of high-quality dried hibiscus flowers to meet growing global demand."
+      "Khadesh Global supplies and exports premium dried hibiscus flowers (Hibiscus sabdariffa) sourced directly from trusted farmers in Northern Nigeria, specifically Kano, Bauchi, and Gombe States.",
+      "Our hibiscus is carefully processed to meet international export standards for global buyers.",
+      "We work closely with local farmers to ensure consistent quality and reliable supply, while carefully cleaning and sun-drying our hibiscus flowers to preserve their natural color, taste, and quality.",
+      "Our products are supplied to international markets such as the USA and Mexico, including beverage companies, herbal manufacturers, and food processors."
     ],
     usesAndBenefits: [
       {
         title: "Beverages",
         points: [
-          "One of the most popular uses of dried hibiscus flowers is beverages.",
-          "The petals are steeped to create a tangy drink known as hibiscus tea or sorrel.",
-          "This tea is rich in antioxidants that help combat oxidative stress and inflammation."
+          "Used to produce hibiscus tea (sorrel), a natural antioxidant-rich drink popular in global health and wellness markets."
         ]
       },
       {
-        title: "Culinary Uses",
+        title: "Food Applications",
         points: [
-          "Dried hibiscus petals are used in salads, desserts, jams, and jellies.",
-          "They add tart flavor and vibrant color.",
-          "Chefs use hibiscus to give a unique twist to traditional dishes."
+          "Used in jams, syrups, desserts, and sauces for its natural tart flavor and vibrant red color."
         ]
       },
       {
-        title: "Dye Production",
+        title: "Natural Dye",
         points: [
-          "The vibrant red color of hibiscus petals is used for natural dye production.",
-          "These dyes are used in textiles and food coloring as eco-friendly alternatives."
+          "Used as an eco-friendly dye in food coloring and textile production."
         ]
       }
     ],
-    qualityAndPricing: [
-      "Our hibiscus flowers are sourced from top farms for consistent quality.",
-      "The drying process is carefully controlled to preserve natural taste and health benefits.",
-      "We offer competitive pricing without compromising quality.",
-      "Our efficient supply chain allows us to provide excellent value to customers."
+    whyChoose: [
+      "Direct sourcing from farmers in Kano, Bauchi & Gombe (Northern Nigeria)",
+      "Carefully cleaned and sun-dried for premium export quality",
+      "Consistent deep red color and natural tart flavor",
+      "Reliable bulk supply for international buyers",
+      "Supplying USA, Mexico, and other global markets"
     ],
     productSpecifications: [
       "Product Name: Dried Hibiscus Flowers",
       "Botanical Name: Hibiscus sabdariffa",
       "Plant Part: Dried Calyces",
-      "Grade: Food Grade - Suitable for Herbal Tea & Beverage Use",
-      "Drying Method: Sun-dried / Mechanically dried under hygienic conditions"
+      "Grade: Food Grade (Tea & Beverage Use)",
+      "Drying Method: Sun-dried / Hygienically processed"
     ],
     physicalOrganoleptic: [
-      "Appearance: Clean, well-dried whole calyces",
-      "Color: Uniform deep red to burgundy",
-      "Odor: Characteristic, free from musty/off-odors",
-      "Taste: Natural tart flavor",
+      "Appearance: Clean whole dried calyces",
+      "Color: Deep red to burgundy",
+      "Odor: Natural, free from musty smell",
+      "Taste: Naturally tart",
       "Foreign Matter: ≤ 0.5%",
       "Broken Pieces: ≤ 5%",
       "Infestation: None",
-      "Visible Mold: None"
+      "Mold: None"
     ],
     chemicalParameters: [
-      "Moisture Content: ≤ 8-10%",
-      "Total Ash: 10%",
-      "Acid Insoluble Ash: 1.5%",
-      "Sulphur Dioxide: Not added / within EU permitted limits"
+      "Moisture Content: ≤ 8–10%",
+      "Total Ash: ≤ 10%",
+      "Acid Insoluble Ash: ≤ 1.5%"
     ],
-    contaminantLimits: [
-      "Aflatoxin B1: ≤ 5 ug/kg",
-      "Total Aflatoxins: ≤ 10 ug/kg",
-      "Lead (Pb): ≤ 3.0 mg/kg",
-      "Cadmium (Cd): ≤ 0.2 mg/kg",
-      "Mercury (Hg): ≤ 0.1 mg/kg",
-      "Pesticide Residues: Compliant with EU MRL regulations"
+    exportCompliance: [
+      "Aflatoxin B1: ≤ 5 µg/kg",
+      "Total Aflatoxins: ≤ 10 µg/kg",
+      "Heavy Metals: Within EU/US limits",
+      "Pesticide Residues: Compliant with international standards"
     ],
     additivesTreatment: [
       "No artificial coloring",
@@ -274,69 +267,68 @@ const ARTICLES = {
       "Not irradiated (unless requested by buyer)"
     ],
     packaging: [
-      "25kg food-grade polypropylene bags with inner polyethylene liner",
-      "Kraft paper bags with moisture barrier (optional)",
+      "25kg food-grade polypropylene bags with inner liner",
+      "Kraft paper packaging (optional)",
       "Clearly labeled with batch number, production date, and net weight"
     ],
     storageShelfLife: [
-      "Store in a cool, dry, and well-ventilated warehouse",
-      "Relative humidity below 65%",
-      "Protect from direct sunlight and pests",
-      "Shelf Life: Up to 24 months under recommended storage conditions"
+      "Store in a cool, dry, and ventilated environment",
+      "Avoid moisture and direct sunlight",
+      "Shelf Life: Up to 24 months under proper storage conditions"
     ]
   },
   "dried-ginger": {
     label: "Dried Split Ginger",
     heading: "DRIED SPLIT GINGER",
-    title: "Dried Split Ginger (Zingiber officinale)",
+    title: "Dried Split Ginger Export from Nigeria (Zingiber officinale)",
     image: driedGingerImage,
     intro: [
-      "Dried Split Ginger refers to ginger rhizomes (Zingiber officinale) that have been harvested, cleaned, split into halves, and sun-dried to reduce moisture content.",
-      "This preservation method enhances shelf life and maintains pungency, making it a preferred form for export, storage, and industrial processing.",
-      "Dried Split Ginger is widely used across the food, pharmaceutical, and cosmetic industries due to its strong flavor, medicinal properties, and economic value.",
-      "Unlike fresh ginger, dried split ginger has an extended shelf life without refrigeration and often has more concentrated essential oils and gingerol content.",
-      "Its lighter weight and reduced moisture make it easier to transport in bulk and more cost-effective for large-scale processing."
+      "Khadesh Global supplies and exports premium dried split ginger (Zingiber officinale) sourced directly from trusted farmers across major ginger-producing regions in Nigeria, including Southern Kaduna, Nasarawa, Benue, Niger, and Gombe States.",
+      "The ginger is carefully harvested, cleaned, split, and sun-dried to preserve its natural aroma, potency, and export quality.",
+      "Our dried split ginger is widely used in global food, pharmaceutical, and cosmetic industries due to its strong flavor, high gingerol content, and long shelf life.",
+      "It is ideal for bulk buyers because it is lightweight, stable, and cost-efficient for international trade."
+    ],
+    whyChoose: [
+      "Sourced directly from farmers in Southern Kaduna, Nasarawa, Benue, Niger & Gombe (Nigeria)",
+      "Carefully cleaned, split, and sun-dried for export-grade quality",
+      "Strong aroma and high natural gingerol content",
+      "Consistent quality for bulk international supply",
+      "Reliable export partner for global buyers"
     ],
     applications: {
       "Food Industry": [
-        "Spice Production: Used in powdered ginger products, spice blends, and condiments.",
-        "Tea and Beverages: A key ingredient in ginger tea, herbal infusions, and ginger-flavored drinks.",
-        "Flavoring Agent: Enhances the taste of soups, sauces, and baked goods."
+        "Used in spice production, powdered ginger, sauces, baked goods, and beverages such as ginger tea and herbal infusions."
       ],
       "Pharmaceutical Industry": [
-        "Digestive Health: Used in supplements and herbal remedies for nausea, bloating, and indigestion.",
-        "Anti-Inflammatory Uses: Extracts are used in pain relief and arthritis treatment.",
-        "Immune Boosting: Popular in cold and flu medications due to its antimicrobial properties."
+        "Used in herbal medicines and supplements for digestion support, anti-inflammatory formulations, and immune-boosting products."
       ],
       "Cosmetic and Personal Care Industry": [
-        "Skincare: Found in anti-aging creams and acne treatments due to antioxidant properties.",
-        "Hair Care: Used in shampoos and conditioners to promote scalp health and reduce dandruff."
+        "Used in skincare and haircare products for antioxidant and scalp health benefits."
       ],
       "Industrial and Other Uses": [
-        "Essential Oil Extraction: Used in perfumes, aromatherapy, and medicinal balms.",
-        "Preservative: Acts as a natural preservative in some food and medicinal formulations."
+        "Used for essential oil extraction, aromatherapy, and natural medicinal products."
       ]
     },
     physicalSpecifications: [
       "Form: Whole fingers / Split / Sliced",
       "Color: Light brown to yellowish",
-      "Odor: Characteristic strong aromatic smell",
-      "Taste: Pungent, spicy",
+      "Odor: Strong natural aromatic smell",
+      "Taste: Pungent and spicy",
       "Moisture Content: ≤ 10%",
       "Foreign Matter: ≤ 0.5%",
       "Admixture: ≤ 0.5%",
-      "Broken Pieces: ≤ 5% (depending on grade)",
-      "Size: 3–8 cm (whole fingers, depending on grade)"
+      "Broken Pieces: ≤ 5%",
+      "Size: 3–8 cm (depending on grade)"
     ],
     chemicalSpecifications: [
-      "Volatile Oil Content: 1.5% – 3% (min)",
+      "Volatile Oil Content: 1.5% – 3% (minimum)",
       "Total Ash: ≤ 8%",
       "Acid Insoluble Ash: ≤ 2%"
     ],
     packaging: [
       "25kg / 50kg PP bags",
-      "Jute bags",
-      "Vacuum-packed (upon request)",
+      "Jute bags (export standard)",
+      "Vacuum packaging available on request",
       "Private labeling available"
     ],
     shelfLife: "24 months under cool, dry storage conditions"
@@ -344,80 +336,106 @@ const ARTICLES = {
   "soya-beans": {
     label: "Soya Beans",
     heading: "SOYA BEANS",
-    title: "Glycine max",
+    title: "Soya Beans Export from Nigeria (Glycine max)",
     image: soyaBeansImage,
     intro: [
-      "Soya bean (also known as soybean), scientifically known as Glycine max, is a remarkable legume with a rich history and diverse uses.",
-      "Originating in East Asia, this crop has become a global agricultural powerhouse due to its nutritional profile and industrial applications.",
-      "Known for high protein content, soya bean is essential in products such as tofu, soy milk, and soy flour, and is also widely used in animal feed.",
-      "Its versatility extends to industrial applications such as biodiesel production and adhesive manufacturing."
+      "Khadesh Global supplies and exports high-quality soya beans (Glycine max) sourced directly from trusted farmers across major soybean-producing regions in Nigeria, including Benue, Nasarawa, Plateau, Taraba, Kaduna, Niger, and Kebbi States.",
+      "Our soybeans are carefully cleaned, sorted, and prepared to meet international export standards.",
+      "Nigeria is one of Africa’s growing soybean producers, and our sourcing network ensures consistent supply for global food, feed, and industrial markets.",
+      "Soya beans are highly valued for their rich protein and oil content and are widely used in food production, animal feed, and industrial applications such as biodiesel and food processing."
+    ],
+    uses: {
+      "Food Industry": [
+        "Used in the production of soy milk, tofu, soy flour, cooking oil, and protein-based foods."
+      ],
+      "Animal Feed Industry": [
+        "A major ingredient in livestock and poultry feed due to its high protein content."
+      ],
+      "Industrial Use": [
+        "Used in biodiesel production, adhesives, and various industrial formulations."
+      ]
+    },
+    whyChoose: [
+      "Sourced directly from farmers in Benue, Nasarawa, Plateau, Taraba, Kaduna, Niger & Kebbi (Nigeria)",
+      "Cleaned, sorted, and export-grade quality",
+      "High protein content with consistent oil yield",
+      "Reliable bulk supply for international markets",
+      "Strong quality control and export compliance"
     ],
     productSpecifications: [
       "Product Name: Soybean",
       "Botanical Name: Glycine max"
     ],
     physicalSpecifications: [
-      "Color: Natural Yellow",
+      "Color: Natural yellow",
       "Moisture Content: Max 12–13%",
       "Foreign Matter: Max 1–2%",
       "Broken/Split Seeds: Max 3–5%",
       "Damaged Seeds: Max 2–3%",
       "Admixture: Max 1%",
       "Immature Seeds: Max 2%",
-      "Insect Infestation: Nil",
-      "Odor: Fresh, Natural",
-      "Live Weevils: Nil"
+      "Odor: Fresh, natural",
+      "Insect Infestation: None",
+      "Live Weevils: None"
     ],
     chemicalSpecifications: [
-      "Protein: 35–40% Min",
+      "Protein: 35–40% minimum",
       "Oil Content: 18–20%",
       "Free Fatty Acid: Max 2%",
       "Aflatoxin: ≤ 3–10 ppb"
     ],
     packaging: [
-      "50kg PP Bags",
-      "25kg PP Bags",
-      "Bulk in Container (Jumbo bags available on request)"
+      "25kg PP bags",
+      "50kg PP bags",
+      "Bulk container shipment",
+      "Jumbo bags available on request"
     ],
     shelfLifeTable: [
-      "Proper dry storage (≤13% moisture): 12 months",
-      "Controlled temperature storage: Up to 18 months",
-      "High humidity exposure: Significantly reduced shelf life"
+      "Store in a cool, dry, and well-ventilated area",
+      "Maintain moisture below 13%",
+      "Avoid humidity and pests",
+      "Shelf Life: 12 months (up to 18 months in controlled storage)"
     ]
   },
   "processed-cashew-nuts-w240-w320": {
     label: "Processed Cashew Nuts W240 and W320",
     heading: "PROCESSED CASHEW NUTS",
-    title: "W240 and W320",
+    title: "Cashew Nuts W240 & W320 Export from Nigeria",
     heroImage: cashewW320Image,
     image: cashewW240Image,
     intro: [
-      "Scientifically, cashew nuts are an excellent source of nutrition. Cashew apples contain high Vitamin C and cashew nuts contain calcium, iron, and vitamin B1.",
-      "Studies suggest moderate, regular consumption of cashew nuts can support heart health and improve cholesterol balance.",
-      "Cashew nuts are rich in nutrients with high oil and protein content, making them widely used in food and beverage production."
+      "Khadesh Global supplies and exports premium cashew nuts (W240 and W320 grades) sourced directly from trusted farmers across major cashew-producing regions in Nigeria, including Oyo, Osun, Ogun, Kogi, Kwara, Edo, Enugu, and Anambra States.",
+      "Our cashew kernels are carefully processed, sorted, and packed to meet international export standards.",
+      "Nigeria is one of the leading cashew-producing countries in Africa, and our supply chain ensures consistent quality kernels for global food processing, snack production, and confectionery industries.",
+      "Cashew nuts are highly valued for their rich nutrient profile, including healthy fats, protein, calcium, iron, and vitamin B1, making them a key ingredient in global food and beverage manufacturing."
     ],
-    useCases: [
-      "Roasted snack cashew products (salted, honey-coated, and flavored variants).",
-      "Ingredient for ice cream, cakes, sweets, and confectionery toppings.",
-      "Ground into fine powder to improve flavor and aroma in multiple food products."
+    applications: [
+      "Snack Industry: Consumed as roasted, salted, honey-coated, or flavored snack products.",
+      "Food Processing Industry: Used in ice cream, cakes, chocolates, sweets, and confectionery toppings.",
+      "Food Ingredients: Ground into powder or paste for flavor enhancement and nutritional enrichment."
     ],
-    qualityClaim: [
-      "Khadesh Global Cashew Nuts W240 and W320 meet required standards for superior quality in extra class.",
-      "Products are white-ish in color and supplied as whole kernels with minimal breakage."
+    whyChoose: [
+      "Sourced directly from farmers in Oyo, Osun, Ogun, Kogi, Kwara, Edo, Enugu & Anambra (Nigeria)",
+      "Export-grade W240 and W320 kernels",
+      "Clean, white kernels with minimal breakage",
+      "Strict quality control and sorting process",
+      "Reliable bulk supply for international markets"
     ],
     specs: [
-      "Texture: Crispy",
-      "Size: 240 kernels per pound (W240)",
-      "Size: 320 kernels per pound (W320)",
-      "Moisture: 5% max",
-      "Broken: 5% max",
-      "Spotted: 1% max",
-      "Scrapes: 5% max",
-      "Insects: No"
+      "Color: White to light ivory",
+      "Texture: Crisp",
+      "W240: 240 kernels per pound",
+      "W320: 320 kernels per pound",
+      "Moisture Content: Max 5%",
+      "Broken Kernels: Max 5%",
+      "Spotted Kernels: Max 1%",
+      "Scrapes: Max 5%",
+      "Insect Infestation: None"
     ],
     packaging: [
-      "Standard export-safe packaging with strong handling control.",
-      "1kg / 5kg / 10kg per carton, or based on buyer's request."
+      "1kg, 5kg, 10kg cartons",
+      "Export-grade protective packaging",
+      "Customized packaging available upon request"
     ]
   }
 };
@@ -451,6 +469,25 @@ export default function CommodityArticlePage() {
   const orderLink = `${WHATSAPP_BASE}?text=${encodeURIComponent(
     `Hello Khadesh Global, I want to place an order for ${article.label}.`
   )}`;
+
+  const enquireMeta = (() => {
+    switch (slug) {
+      case "sesame-seeds":
+        return { title: "Enquire About Sesame Seeds", noun: "sesame seed requirements" };
+      case "dried-ginger":
+        return { title: "Enquire About Ginger", noun: "ginger requirements" };
+      case "dried-hibiscus-flower":
+        return { title: "Enquire About Dried Hibiscus Flowers", noun: "dried hibiscus flower requirements" };
+      case "processed-cashew-nuts-w240-w320":
+        return { title: "Enquire About Cashew Nuts", noun: "cashew nut requirements" };
+      case "soya-beans":
+        return { title: "Enquire About Soybeans", noun: "soybean requirements" };
+      case "shea-butter":
+        return { title: "Enquire About Shea Butter", noun: "shea butter requirements" };
+      default:
+        return { title: `Enquire About ${article.label}`, noun: `${article.label} requirements` };
+    }
+  })();
 
   return (
     <section className={styles.wrapper}>
@@ -516,19 +553,17 @@ export default function CommodityArticlePage() {
             {slug === "processed-cashew-nuts-w240-w320" && (
               <>
                 <section className={styles.section}>
-                  <h3>Use Cases in the Food & Beverage Industry</h3>
-                  <ListBlock items={article.useCases} />
+                  <h3>Applications of Cashew Nuts</h3>
+                  <ListBlock items={article.applications} />
                 </section>
 
                 <section className={styles.section}>
-                  <h3>Khadesh Global Cashew Nuts W240 and W320</h3>
-                  {article.qualityClaim.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
+                  <h3>Why Choose Khadesh Global</h3>
+                  <ListBlock items={article.whyChoose} />
                 </section>
 
                 <section className={styles.section}>
-                  <h3>Specification in Features</h3>
+                  <h3>Physical Characteristics</h3>
                   <ListBlock items={article.specs} />
                 </section>
 
@@ -562,6 +597,11 @@ export default function CommodityArticlePage() {
                 </section>
 
                 <section className={styles.section}>
+                  <h3>Why Choose Khadesh Global Ginger</h3>
+                  <ListBlock items={article.whyChoose} />
+                </section>
+
+                <section className={styles.section}>
                   <h3>Physical Specifications</h3>
                   <ListBlock items={article.physicalSpecifications} />
                 </section>
@@ -583,18 +623,18 @@ export default function CommodityArticlePage() {
             {slug === "dried-hibiscus-flower" && (
               <>
                 <section className={styles.section}>
-                  <h3>Top Uses and Benefits of Dried Hibiscus Flower</h3>
+                  <h3>Uses of Dried Hibiscus Flower</h3>
                   {article.usesAndBenefits.map((group) => (
                     <div key={group.title}>
                       <h3>{group.title}</h3>
-                      <ListBlock items={group.points} />
+                      {group.points.length ? <ListBlock items={group.points} /> : null}
                     </div>
                   ))}
                 </section>
 
                 <section className={styles.section}>
-                  <h3>Superior Quality and Competitive Pricing</h3>
-                  <ListBlock items={article.qualityAndPricing} />
+                  <h3>Why Choose Khadesh Global</h3>
+                  <ListBlock items={article.whyChoose} />
                 </section>
 
                 <section className={styles.section}>
@@ -613,8 +653,8 @@ export default function CommodityArticlePage() {
                 </section>
 
                 <section className={styles.section}>
-                  <h3>Contaminant Limits (EU Compliant)</h3>
-                  <ListBlock items={article.contaminantLimits} />
+                  <h3>Export Compliance</h3>
+                  <ListBlock items={article.exportCompliance} />
                 </section>
 
                 <section className={styles.section}>
@@ -673,6 +713,21 @@ export default function CommodityArticlePage() {
             {slug === "soya-beans" && (
               <>
                 <section className={styles.section}>
+                  <h3>Uses of Soya Beans</h3>
+                  {Object.entries(article.uses).map(([category, items]) => (
+                    <div key={category}>
+                      <h3>{category}</h3>
+                      <ListBlock items={items} />
+                    </div>
+                  ))}
+                </section>
+
+                <section className={styles.section}>
+                  <h3>Why Choose Khadesh Global Soybeans</h3>
+                  <ListBlock items={article.whyChoose} />
+                </section>
+
+                <section className={styles.section}>
                   <h3>Product Specifications</h3>
                   <ListBlock items={article.productSpecifications} />
                 </section>
@@ -713,10 +768,10 @@ export default function CommodityArticlePage() {
               </p>
               <p>WhatsApp: {CONTACT_PHONE}</p>
 
-              <h3>Place Your {article.label} Order</h3>
+              <h3>{enquireMeta.title}</h3>
               <p>
-                Click the button below and tell us about your {article.label} needs. We will help you export based on
-                mutually agreed terms.
+                Click the button below and tell us about your {enquireMeta.noun}. We support buyers, suppliers, and trade
+                partners with sourcing, supply, and export coordination based on mutually agreed terms.
               </p>
               <a href={orderLink} target="_blank" rel="noopener noreferrer" className={styles.orderButton}>
                 PLACE YOUR ORDER

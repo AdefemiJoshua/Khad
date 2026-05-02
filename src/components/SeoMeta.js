@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import React from "react";
+import { Helmet } from "react-helmet-async";
 import { getCommoditySeo } from "../seo/commoditySeo";
 
 const DEFAULT_META = {
@@ -19,9 +20,10 @@ const ROUTE_META = {
       "agricultural commodities, agricultural commodities exporter, Nigeria commodity export, Africa commodity supplier",
   },
   "/project-management": {
-    title: "Project Management | Khadesh Global",
+    title: "project management consulting Nigeria | Khadesh Global Services",
     description:
-      "Professional project management services delivered with structured execution and measurable outcomes.",
+      "project management consulting Nigeria supporting agribusiness, government, manufacturing, and NGO projects.",
+    keywords: "project management consulting Nigeria, project planning execution, logistics supply chain management",
   },
   "/commodities": {
     title: "Agricultural Commodities Portfolio | Khadesh Global",
@@ -31,39 +33,46 @@ const ROUTE_META = {
       "agricultural commodities list, shea butter export, sesame seeds supplier, soybean exporter, dried hibiscus exporter, dried ginger supplier, cashew nuts w240 w320",
   },
   "/our-agents": {
-    title: "Our Agents | Khadesh Global",
+    title: "commodity trading agents Nigeria | Khadesh Global Agent Program",
     description:
-      "Meet Khadesh Global's trusted agent network supporting regional and global distribution.",
+      "commodity trading agents Nigeria offering commission-based opportunities in agricultural trade facilitation.",
+    keywords: "commodity trading agents Nigeria, agricultural trade agents, commodity brokers Nigeria",
   },
   "/our-strategy": {
-    title: "Our Strategy | Khadesh Global",
+    title: "agricultural supply chain Nigeria | Khadesh Global Strategy",
     description:
-      "Understand the growth, sourcing, and operational strategy that drives Khadesh Global.",
+      "agricultural supply chain Nigeria integrating farmers, logistics, and buyers into a structured commodity trade system.",
+    keywords: "agricultural supply chain Nigeria, farm to export logistics, commodity sourcing strategy",
   },
   "/sustainability": {
-    title: "Sustainability | Khadesh Global",
+    title: "sustainable agriculture Nigeria | Khadesh Global Sustainability",
     description:
-      "Discover our sustainability approach across procurement, operations, and long-term partnerships.",
+      "sustainable agriculture Nigeria promoting ethical sourcing, environmental responsibility, and smallholder farmer inclusion.",
+    keywords: "sustainable agriculture Nigeria, responsible sourcing, ethical supply chain, smallholder farmers",
   },
   "/quality-assurance-compliance": {
-    title: "Quality Assurance & Compliance | Khadesh Global",
+    title: "agricultural export compliance Nigeria | Khadesh Global QA",
     description:
-      "Review Khadesh Global's quality assurance framework, HACCP-aligned controls, traceability, and export compliance support.",
+      "agricultural export compliance Nigeria ensuring food safety, certification, testing, and traceability for global trade.",
+    keywords: "agricultural export compliance Nigeria, HACCP, traceability, aflatoxin testing, phytosanitary certificate",
   },
   "/about-us": {
-    title: "About Us | Khadesh Global",
+    title: "agricultural export company Nigeria | About Khadesh Global",
     description:
-      "Learn about Khadesh Global Integrated Services Limited and our mission-driven operating model.",
+      "agricultural export company Nigeria specializing in sourcing from smallholder farmers and delivering agricultural commodities to global markets with project management support.",
+    keywords: "agricultural export company Nigeria, commodity export Nigeria, supply chain management, quality control",
   },
   "/our-mission": {
-    title: "Our Mission | Khadesh Global",
+    title: "agricultural sourcing Nigeria | Khadesh Global Mission",
     description:
-      "Read Khadesh Global's mission and long-term commitment to dependable service delivery.",
+      "agricultural sourcing Nigeria focused on ethical sourcing, delivery, and project management solutions across global markets.",
+    keywords: "agricultural sourcing Nigeria, ethical sourcing, commodity export mission, project management support",
   },
   "/our-vision": {
-    title: "Our Vision | Khadesh Global",
+    title: "agricultural trade company Nigeria | Khadesh Global Vision",
     description:
-      "Explore our vision for sustainable growth in commodities and integrated services.",
+      "agricultural trade company Nigeria focused on connecting farmers to global markets through trusted trade and project management solutions.",
+    keywords: "agricultural trade company Nigeria, global commodity trade, trusted supply, project management",
   },
   "/our-commitment": {
     title: "Our Commitment | Khadesh Global",
@@ -71,9 +80,10 @@ const ROUTE_META = {
       "See how Khadesh Global maintains quality, integrity, and consistent stakeholder value.",
   },
   "/our-partners": {
-    title: "Our Partners | Khadesh Global",
+    title: "commodity trading partners Nigeria | Khadesh Global Collaboration",
     description:
-      "Discover partner organizations that support Khadesh Global's operations and expansion.",
+      "commodity trading partners Nigeria building long-term supply chain partnerships across agricultural markets.",
+    keywords: "commodity trading partners Nigeria, logistics partners, warehousing partners, aggregation partners",
   },
   "/our-value-proposition": {
     title: "Our Value Proposition | Khadesh Global",
@@ -86,130 +96,127 @@ const ROUTE_META = {
       "Contact Khadesh Global for inquiries, partnerships, commodity requests, and project support.",
   },
   "/local-supply": {
-    title: "Local Supply | Khadesh Global",
+    title: "local agricultural supply Nigeria | Khadesh Global Network",
     description:
-      "Reliable local supply services with quality control and responsive delivery support.",
+      "local agricultural supply Nigeria connecting farmers and buyers through structured domestic commodity distribution systems.",
+    keywords: "local agricultural supply Nigeria, commodity distribution, aggregation, local buyers, Nigeria markets",
   },
 };
 
-const setMeta = (attribute, key, content) => {
-  let tag = document.head.querySelector(`meta[${attribute}='${key}']`);
-  if (!tag) {
-    tag = document.createElement("meta");
-    tag.setAttribute(attribute, key);
-    document.head.appendChild(tag);
-  }
-  tag.setAttribute("content", content);
-};
-
-const setCanonical = (href) => {
-  let link = document.head.querySelector("link[rel='canonical']");
-  if (!link) {
-    link = document.createElement("link");
-    link.setAttribute("rel", "canonical");
-    document.head.appendChild(link);
-  }
-  link.setAttribute("href", href);
-};
-
-const setJsonLd = (id, data) => {
-  let script = document.head.querySelector(`script[data-seo='${id}']`);
-  if (!script) {
-    script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.setAttribute("data-seo", id);
-    document.head.appendChild(script);
-  }
-  script.textContent = JSON.stringify(data);
-};
-
 export default function SeoMeta({ pathname }) {
-  useEffect(() => {
-    const normalizedPath = pathname.toLowerCase();
-    const routeMeta = ROUTE_META[normalizedPath] || {};
-    const commoditySlug = normalizedPath.startsWith("/commodities/") ? normalizedPath.split("/")[2] : null;
-    const commodityMeta = getCommoditySeo(commoditySlug);
-    const meta = { ...DEFAULT_META, ...routeMeta, ...(commodityMeta || {}) };
-    const canonicalUrl = `${window.location.origin}${pathname}`;
-    const isCommodityArticle = normalizedPath.startsWith("/commodities/");
-    const ogType = isCommodityArticle ? "article" : "website";
+  const normalizedPath = (pathname || "/").toLowerCase();
+  const routeMeta = ROUTE_META[normalizedPath] || {};
+  const commoditySlug = normalizedPath.startsWith("/commodities/")
+    ? normalizedPath.split("/")[2]
+    : null;
+  const commodityMeta = getCommoditySeo(commoditySlug);
+  const meta = { ...DEFAULT_META, ...routeMeta, ...(commodityMeta || {}) };
 
-    document.title = meta.title;
+  const origin =
+    typeof window !== "undefined" && window.location && window.location.origin
+      ? window.location.origin
+      : "";
+  const canonicalUrl = `${origin}${pathname || "/"}`;
+  const isCommodityArticle = normalizedPath.startsWith("/commodities/");
+  const ogType = isCommodityArticle ? "article" : "website";
 
-    setMeta("name", "description", meta.description);
-    setMeta("name", "keywords", meta.keywords);
-    setMeta("name", "robots", "index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1");
-    setMeta("name", "author", "Khadesh Global Integrated Services Limited");
-    setMeta("name", "language", "en");
-    setMeta("property", "og:title", meta.title);
-    setMeta("property", "og:description", meta.description);
-    setMeta("property", "og:type", ogType);
-    setMeta("property", "og:site_name", "Khadesh Global");
-    setMeta("property", "og:locale", "en_NG");
-    setMeta("property", "og:image", meta.image);
-    setMeta("property", "og:url", canonicalUrl);
-    setMeta("name", "twitter:card", "summary_large_image");
-    setMeta("name", "twitter:title", meta.title);
-    setMeta("name", "twitter:description", meta.description);
-    setMeta("name", "twitter:image", meta.image);
-    setMeta("name", "twitter:url", canonicalUrl);
-    setMeta("name", "twitter:site", "@khadeshglobal");
-    setMeta("name", "twitter:creator", "@khadeshglobal");
-    setCanonical(canonicalUrl);
+  const imageUrl =
+    meta.image && meta.image.startsWith("/") && origin ? `${origin}${meta.image}` : meta.image;
 
-    const origin = window.location.origin;
-    setJsonLd("organization", {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "Khadesh Global Integrated Services Limited",
-      url: origin,
-      logo: `${origin}/url-logo-512.png`,
-      areaServed: ["Nigeria", "United Kingdom", "United States", "European Union"],
-    });
+  const jsonLdOrganization = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Khadesh Global Integrated Services Limited",
+    url: origin || undefined,
+    logo: origin ? `${origin}/url-logo-512.png` : "/url-logo-512.png",
+    areaServed: ["Nigeria", "United Kingdom", "United States", "European Union"],
+  };
 
-    setJsonLd("website", {
-      "@context": "https://schema.org",
+  const jsonLdWebsite = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Khadesh Global",
+    url: origin || undefined,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: origin ? `${origin}/commodities` : "/commodities",
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  const jsonLdWebpage = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: meta.title,
+    description: meta.description,
+    url: canonicalUrl,
+    isPartOf: {
       "@type": "WebSite",
       name: "Khadesh Global",
-      url: origin,
-      potentialAction: {
-        "@type": "SearchAction",
-        target: `${origin}/commodities`,
-        "query-input": "required name=search_term_string",
-      },
-    });
+      url: origin || undefined,
+    },
+  };
 
-    setJsonLd("webpage", {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      name: meta.title,
-      description: meta.description,
-      url: canonicalUrl,
-      isPartOf: {
-        "@type": "WebSite",
-        name: "Khadesh Global",
-        url: origin,
-      },
-    });
+  const jsonLdProduct =
+    isCommodityArticle && commodityMeta
+      ? {
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: commodityMeta.name,
+          category: commodityMeta.category,
+          description: meta.description,
+          brand: {
+            "@type": "Brand",
+            name: "Khadesh Global",
+          },
+          url: canonicalUrl,
+        }
+      : null;
 
-    if (isCommodityArticle && commodityMeta) {
-      setJsonLd("product", {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        name: commodityMeta.name,
-        category: commodityMeta.category,
-        description: meta.description,
-        brand: {
-          "@type": "Brand",
-          name: "Khadesh Global",
-        },
-        url: canonicalUrl,
-      });
-    } else {
-      const existing = document.head.querySelector("script[data-seo='product']");
-      if (existing) existing.remove();
-    }
-  }, [pathname]);
+  return (
+    <Helmet prioritizeSeoTags>
+      <title>{meta.title}</title>
+      <meta name="description" content={meta.description} />
+      {meta.keywords ? <meta name="keywords" content={meta.keywords} /> : null}
+      <meta
+        name="robots"
+        content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      />
+      <meta name="author" content="Khadesh Global Integrated Services Limited" />
+      <meta name="language" content="en" />
 
-  return null;
+      <meta property="og:title" content={meta.title} />
+      <meta property="og:description" content={meta.description} />
+      <meta property="og:type" content={ogType} />
+      <meta property="og:site_name" content="Khadesh Global" />
+      <meta property="og:locale" content="en_NG" />
+      {imageUrl ? <meta property="og:image" content={imageUrl} /> : null}
+      <meta property="og:url" content={canonicalUrl} />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={meta.title} />
+      <meta name="twitter:description" content={meta.description} />
+      {imageUrl ? <meta name="twitter:image" content={imageUrl} /> : null}
+      <meta name="twitter:url" content={canonicalUrl} />
+      <meta name="twitter:site" content="@khadeshglobal" />
+      <meta name="twitter:creator" content="@khadeshglobal" />
+
+      <link rel="canonical" href={canonicalUrl} />
+
+      <script type="application/ld+json" data-seo="organization">
+        {JSON.stringify(jsonLdOrganization)}
+      </script>
+      <script type="application/ld+json" data-seo="website">
+        {JSON.stringify(jsonLdWebsite)}
+      </script>
+      <script type="application/ld+json" data-seo="webpage">
+        {JSON.stringify(jsonLdWebpage)}
+      </script>
+      {jsonLdProduct ? (
+        <script type="application/ld+json" data-seo="product">
+          {JSON.stringify(jsonLdProduct)}
+        </script>
+      ) : null}
+    </Helmet>
+  );
 }

@@ -3,11 +3,11 @@ const TARGET_MARKETS = "Nigeria, UK, EU, USA";
 const COMMODITY_SEO = {
   "dried-ginger": {
     name: "Dried Split Ginger",
-    title: "Dried Ginger Exporter (Nigeria) | Khadesh Global",
+    title: "ginger export Nigeria | Khadesh Global Dried Split Ginger",
     description:
-      `Export and supply of dried split ginger from Nigeria to ${TARGET_MARKETS}. Quality-focused sourcing, reliable packaging, and export support.`,
+      "ginger export Nigeria supplying premium dried split ginger sourced from Nigerian farmers for global markets.",
     keywords:
-      "dried ginger exporter, dried split ginger, zingiber officinale, ginger export Nigeria, agricultural commodities supplier",
+      "ginger export Nigeria, dried split ginger, zingiber officinale, ginger supplier, agricultural export company Nigeria",
     category: "Agricultural Commodity",
   },
   "shea-butter": {
@@ -21,38 +21,38 @@ const COMMODITY_SEO = {
   },
   "processed-cashew-nuts-w240-w320": {
     name: "Processed Cashew Nuts (W240, W320)",
-    title: "Processed Cashew Nuts W240/W320 Export | Khadesh Global",
+    title: "cashew nuts export Nigeria | Khadesh Global W240 W320",
     description:
-      `Export and supply of processed cashew nuts W240 and W320 from Nigeria to ${TARGET_MARKETS}. Export-ready packaging and consistent kernel quality.`,
+      "cashew nuts export Nigeria supplying premium graded cashew kernels for global food and confectionery industries.",
     keywords:
-      "cashew nuts w240, cashew nuts w320, processed cashew nuts exporter, cashew export Nigeria, agricultural commodities supplier",
+      "cashew nuts export Nigeria, cashew kernels W240, cashew kernels W320, cashew supplier Nigeria, agricultural export",
     category: "Agricultural Commodity",
   },
   "soya-beans": {
     name: "Soya Beans (Soybean)",
-    title: "Soya Beans (Soybean) Exporter | Khadesh Global",
+    title: "soybean export Nigeria | Khadesh Global Glycine Max",
     description:
-      `Export and supply of soya beans (soybean) from Nigeria to ${TARGET_MARKETS}. Reliable sourcing, specification-led lots, and export support.`,
+      "soybean export Nigeria supplying high-quality soybeans for food, feed, and industrial use globally.",
     keywords:
-      "soya beans exporter, soybean exporter, glycine max, soybean export Nigeria, agricultural commodities export",
+      "soybean export Nigeria, soya beans exporter, glycine max, soybean supplier, agricultural export company Nigeria",
     category: "Agricultural Commodity",
   },
   "sesame-seeds": {
     name: "Sesame Seeds",
-    title: "Sesame Seeds Exporter | Khadesh Global",
+    title: "sesame seeds export Nigeria | Khadesh Global Premium Grade",
     description:
-      `Export and supply of sesame seeds (including hulled options) from Nigeria to ${TARGET_MARKETS}. Cleaned, export-ready lots and reliable delivery.`,
+      "sesame seeds export Nigeria supplying clean, export-grade sesame seeds from Nigerian farmers.",
     keywords:
-      "sesame seeds exporter, hulled sesame seeds, sesamum indicum, sesame export Nigeria, agricultural commodities supplier",
+      "sesame seeds export Nigeria, sesamum indicum, cleaned sesame seeds, sesame supplier Nigeria, agricultural export",
     category: "Agricultural Commodity",
   },
   "dried-hibiscus-flower": {
     name: "Dried Hibiscus Flower",
-    title: "Dried Hibiscus Flower Exporter | Khadesh Global",
+    title: "hibiscus flower export Nigeria | Khadesh Global Dried Hibiscus",
     description:
-      `Export and supply of dried hibiscus flower (Hibiscus sabdariffa) from Nigeria to ${TARGET_MARKETS}. Food-grade supply for tea, beverage, and culinary use.`,
+      "hibiscus flower export Nigeria supplying premium dried hibiscus flowers from Northern Nigeria to global markets.",
     keywords:
-      "dried hibiscus flower exporter, hibiscus sabdariffa, dried hibiscus export Nigeria, hibiscus tea supplier, agricultural commodities export",
+      "hibiscus flower export Nigeria, dried hibiscus flower, hibiscus sabdariffa, sun dried calyces, agricultural export",
     category: "Agricultural Commodity",
   },
 };
@@ -61,4 +61,3 @@ export function getCommoditySeo(slug) {
   if (!slug) return null;
   return COMMODITY_SEO[slug] || null;
 }
-

@@ -12,24 +12,26 @@ const Sustainability = () => {
           <h2>SUSTAINABILITY & RESPONSIBLE SOURCING</h2>
           <h3>Our Commitment to Sustainable Agriculture</h3>
           <p>
-            Khadesh Global is committed to promoting sustainable agricultural practices that protect the environment,
-            support farming communities, and meet the growing expectations of European and international buyers.
+            Khadesh Global is committed to promoting sustainable agriculture in Nigeria through responsible sourcing from
+            smallholder farmers. We focus on protecting the environment, improving farmer livelihoods, and meeting
+            international food safety and sustainability expectations.
           </p>
           <p>
-            We align our operations with responsible sourcing principles and evolving EU sustainability standards.
+            Our operations align with responsible sourcing principles required by global buyers, including European and
+            international markets.
           </p>
 
-          <h3>Responsible Sourcing</h3>
-          <p>We work directly with trusted farmers and aggregators to ensure:</p>
+          <h3>Responsible Sourcing from Farmers</h3>
+          <p>We source directly from trusted smallholder farmers and local aggregators to ensure:</p>
           <ul>
             <li>Ethical sourcing practices</li>
             <li>No child labor</li>
-            <li>Fair compensation within local supply chains</li>
-            <li>Transparent supplier relationships</li>
-            <li>Compliance with EU human rights due diligence expectations</li>
+            <li>Fair compensation within local farming communities</li>
+            <li>Transparent and traceable supply chains</li>
+            <li>Compliance with international human rights and due diligence standards</li>
           </ul>
           <p>
-            Supplier assessments are conducted periodically to ensure adherence to food safety and ethical standards.
+            We regularly assess our supplier network to maintain quality, safety, and ethical compliance.
           </p>
 
           <h3>Environmental Responsibility</h3>
@@ -37,51 +39,44 @@ const Sustainability = () => {
           <ul>
             <li>Reduced post-harvest losses through proper drying and storage</li>
             <li>Moisture control to prevent mold and aflatoxin contamination</li>
-            <li>Minimal chemical usage and adherence to EU MRL requirements</li>
-            <li>Encouragement of good agricultural practices (GAP)</li>
-            <li>Responsible waste management during cleaning and sorting</li>
+            <li>Reduced chemical usage in line with international residue standards</li>
+            <li>Promotion of good agricultural practices (GAP)</li>
+            <li>Responsible waste handling during processing and sorting</li>
           </ul>
-          <p>
-            We continuously work with our partners to reduce environmental impact throughout the supply chain.
-          </p>
+          <p>We believe environmentally responsible handling protects quality and reduces contamination risks.</p>
 
-          <h3>Compliance with EU Sustainability Regulations</h3>
-          <p>We monitor and align with relevant EU frameworks including:</p>
-          <ul>
-            <li>EU General Food Law (EC 178/2002)</li>
-            <li>EU Maximum Residue Levels Regulation (EC 396/2005)</li>
-            <li>EU Corporate Sustainability Due Diligence expectations</li>
-          </ul>
+          <h3>Traceability & Compliance</h3>
           <p>
-            Traceability systems are implemented to ensure transparency from farm to export shipment.
+            We ensure transparency across the supply chain from farm to export through traceability systems that support
+            food safety and accountability.
           </p>
+          <p>Our operations align with key international frameworks such as:</p>
+          <ul>
+            <li>EU General Food Law</li>
+            <li>EU Maximum Residue Level (MRL) regulations</li>
+            <li>Global food safety and sustainability expectations</li>
+          </ul>
 
           <h3>Community Impact</h3>
-          <p>As a Nigeria-based agricultural exporter, Khadesh Global supports:</p>
+          <p>As a Nigerian agricultural export company, we support:</p>
           <ul>
-            <li>Rural farmer livelihoods</li>
-            <li>Women participation in agricultural value chains</li>
+            <li>Smallholder farmer livelihoods</li>
+            <li>Women participation in agriculture</li>
             <li>Local employment in processing and logistics</li>
-            <li>Capacity building on post-harvest handling</li>
+            <li>Training on post-harvest handling and quality improvement</li>
           </ul>
           <p>
-            We believe sustainable trade should create shared value across the supply chain.
+            We believe sustainable trade must create shared value across all stakeholders.
           </p>
 
           <h3>Continuous Improvement</h3>
           <p>We are committed to:</p>
           <ul>
             <li>Strengthening traceability systems</li>
-            <li>Enhancing food safety monitoring</li>
-            <li>Expanding sustainability training programs for suppliers</li>
-            <li>Pursuing internationally recognized food safety and sustainability certifications</li>
+            <li>Food safety monitoring systems</li>
+            <li>Farmer training and capacity building</li>
+            <li>Long-term sustainability partnerships</li>
           </ul>
-
-          <p>
-            Khadesh Global is dedicated to supplying high-quality agricultural commodities that meet international food
-            safety standards while promoting environmental stewardship and responsible trade practices. Sustainability
-            is integrated into our sourcing, processing, and export operations.
-          </p>
         </div>
       </div>
       <AdditionalSections /> {/* Ensure this component is defined */}
@@ -93,7 +88,11 @@ const Sustainability = () => {
 const HeroSection = () => (
   <section className="hero-section">
     <div className="hero-image-container">
-      <img src="/sustainability.ico" alt="Agricultural Commodities" className="hero-image" />
+      <img
+        src="/sustainability.ico"
+        alt="sustainable agriculture Nigeria smallholder farming practices"
+        className="hero-image"
+      />
       <div className="hero-overlay">
         <h2>Sustainability</h2>
       </div>

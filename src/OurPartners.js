@@ -12,23 +12,45 @@ const OurPartners = () => {
           
           <div className={styles.OurPartnersWriteUp}>
             <p>
-            We want to build a solid working relationship with prospective partners who share our commitment to integrity and enthusiasm for our present business plans and who can assist us in modifying them to meet the dynamic and ever-shifting demands of the global market and regulatory landscapes.
-</p>
-            <p>
-            Privately held Khadesh Global Integrated Services Limited is a global supplier and trader of physical commodities. We are driven by strong entrepreneurial acumen. In contrast to short-term speculative value, Khadesh Global Integrated Services Limited is equally focused on long-term, sentient, and sustainable growth.
-</p>
-            <p>
-              <strong>Partnership in Physical Commodities Trading</strong>
+              Khadesh Global works with trusted partners who share our values of integrity, transparency, and long-term
+              growth in agricultural commodity trade and project management.
             </p>
             <p>
-            In order to bring essential commodities to the global market, Khadesh Global Integrated Services Limited is pursuing a long-term strategy of development, acquisition, operation, expansion, and optimisation of advanced streams and channels. These include industrial processing, bulk commodity storage and terminals, pipeline throughput, trans-loading, transshipment, and multi-modal transportation of agricultural commodities This is exactly in line with our objective of producing optimal value for varied commodity portfolios throughout the supply chain.
-</p>
+              We build strong relationships with suppliers, buyers, logistics providers, and industry professionals who
+              support the efficient movement of agricultural commodities from Nigeria to global markets.
+            </p>
+
+            <h3>Partnership Focus</h3>
+            <p>We welcome partnerships across the agricultural value chain, including:</p>
+            <ul>
+              <li>Commodity sourcing and supply partners</li>
+              <li>Logistics and shipping companies</li>
+              <li>Storage and warehousing operators</li>
+              <li>Processing and aggregation partners</li>
+              <li>Trade and distribution partners</li>
+            </ul>
+
+            <h3>Our Approach</h3>
             <p>
-            You may email us directly with your complete details and credentials, to learn more about possible cooperation opportunities with Khadesh Global Integrated Services Limited.
-</p>
+              Our focus is on building reliable and sustainable supply chain networks that support long-term business
+              growth rather than short-term transactions.
+            </p>
+            <p>We are committed to long-term collaboration built on:</p>
+            <ul>
+              <li>Trust and transparency</li>
+              <li>Consistent supply and demand alignment</li>
+              <li>Efficient logistics and operations</li>
+              <li>Sustainable growth across the value chain</li>
+            </ul>
+
+            <h3>Join Us</h3>
+            <p>
+              We are open to working with qualified partners across global commodity markets. To explore partnership
+              opportunities, kindly send your company details and profile to our official email.
+            </p>
             <p>
               <a href="mailto:khadeshglobalintegratedservice@gmail.com">
-                khadeshglobalintegratedintegratedservice@gmail.com
+                khadeshglobalintegratedservice@gmail.com
               </a>
             </p>
             
@@ -68,7 +90,7 @@ const OurPartners = () => {
 const HeroSection = () => (
   <section className="hero-section">
     <div className="hero-image-container">
-      <img src="/partners.ico" alt="Agricultural Commodities" className="hero-image" />
+      <img src="/partners.ico" alt="commodity trading partners Nigeria supply chain" className="hero-image" />
       <div className="hero-overlay">
       </div>
     </div>

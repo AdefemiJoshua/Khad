@@ -13,27 +13,58 @@ const OurAgents = () => {
         </h2>
         
         <div className={styles.OurAgentsWriteUp}>
+          <h3>Become an Agent / Partner</h3>
           <p>
-          Being a worldwide business, Khadesh Global Integrated Services Limited is committed to serving individuals and enterprises in remote areas of the globe by offering a wide range of basic goods.
-</p>
+            Khadesh Global works with agents and partners to expand the sourcing and supply of agricultural commodities
+            across Nigeria and international markets. We are looking to collaborate with experienced individuals and
+            organizations who can connect us with buyers, suppliers, or business opportunities within our commodity value
+            chain.
+          </p>
+
+          <h3>Who Is an Agent?</h3>
           <p>
-            <br />
-            Khadesh Global Integrated Services Limited is constantly looking to establish productive, well-structured business relationships with seasoned counterparties that follow professional guidelines and are well-connected.  Currently, Khadesh Global Integrated Services Limited is looking to employ international commercial agents that meet the necessary qualifications.
-</p>
+            An agent acts as a business connector—introducing buyers, suppliers, or trade opportunities to Khadesh Global
+            and supporting deal facilitation within their network.
+          </p>
+
+          <h3>Who Can Apply</h3>
+          <ul>
+            <li>Commodity traders and brokers</li>
+            <li>Agribusiness professionals</li>
+            <li>Export consultants</li>
+            <li>Individuals or companies with strong business networks</li>
+            <li>Industry professionals with access to buyers or suppliers</li>
+          </ul>
+
+          <h3>What You Do</h3>
+          <ul>
+            <li>Introduce qualified buyers or suppliers</li>
+            <li>Support communication and deal coordination</li>
+            <li>Help identify new business opportunities</li>
+            <li>Build and maintain strong trade relationships</li>
+          </ul>
+
+          <h3>Benefits of Becoming an Agent</h3>
+          <ul>
+            <li>Commission-based earnings on successful transactions</li>
+            <li>Opportunity to work within international commodity trade</li>
+            <li>Access to our product portfolio and supply network</li>
+            <li>Long-term business partnership opportunities</li>
+          </ul>
+
+          <h3>Why Partner With Khadesh Global</h3>
+          <ul>
+            <li>Reliable supply of agricultural commodities from Nigeria</li>
+            <li>Professional and transparent business approach</li>
+            <li>Strong focus on timely delivery and quality</li>
+            <li>Growing presence in global markets</li>
+          </ul>
+
+          <h3>Get Started</h3>
           <p>
-          Your network will likely include a significant number of customers and/or producers, and as our introducing agent, you will work with Khadesh Global Integrated Services Limited. You will exhibit a commendable level of experience and understanding in our relevant commodities portfolio(s). This can be a highly lucrative and gratifying opportunity, as you will receive payment directly on the turnover sold. Qualified agents working on our behalf will be able to secure and generate successful trade leads with national, regional, and other independent counter-parties.          </p>
-          <p>
-            <br />
-            We are willing to collaborate with agents in each of our business areas. Depending on the real value and potential that our agents provide, we provide a respectable compensation. Successful agents of Khadesh Global Integrated Services Limited will also profit from our unwavering professionalism, business ethics, and timeliness.
-</p>
-          <p>
-            <br />
-            We are excited about the prospect of working with you and appreciate your interest in becoming our agent.
-</p>
-          <p>
-            <br />
-            Kindly reach out to us directly by emailing us all of your information.
-</p>
+            Interested in becoming an agent or partner? Send your details, experience, and network information to our
+            email to begin the onboarding process.
+          </p>
           <p>
             <a href="mailto:khadeshglobalintegratedservice@gmail.com">
               khadeshglobalintegratedservice@gmail.com
@@ -52,7 +83,7 @@ const HeroSection = () => (
     <div className="hero-image-container">
       <img
         src="/ship2.ico"
-        alt="Agricultural Commodities"
+        alt="commodity trading agents Nigeria business network"
         className="hero-image"
       />
       <div className="hero-overlay">
