@@ -10,20 +10,15 @@ const Ourcommitment = () => {
       <div className={styles.OurcommitmentContentContainer}>
      
         <div className={styles.OurcommitmentWriteUp}>
+          <h2>Our Commitment</h2>
           <p>
-          At Khadesh Global Integrated Services Limited, we prioritize our customers' specifications by ensuring that all our products come with a comprehensive Certificate of Analysis from the Nigeria Agricultural Quarantine Services (NAQS). This commitment reflects our dedication to quality and compliance in the agricultural export sector.           </p>
-
+            At Khadesh Global, we are committed to supplying agricultural commodities that meet international quality and
+            safety standards. All products are properly tested and accompanied by Certificates of Analysis from accredited
+            laboratories, including NAQS where required.
+          </p>
           <p>
-          The Certificate of Analysis serves as a crucial document that verifies the quality and safety of agricultural products. NAQS, as the designated competent authority under the International Plant Protection Convention (IPPC), plays a vital role in enforcing the Sanitary and Phytosanitary (SPS) measures that are essential for international trade. By adhering to these measures, we guarantee that our products are not only safe for consumption but also meet the stringent standards set by international regulatory bodies.</p>
-<p>
-  By working closely with NAQS and aligning our practices with international standards, we contribute to enhancing Nigeria’s reputation as a reliable source of agricultural goods, ultimately supporting the growth and sustainability of the sector.
-</p>
-<p>
-At Khadesh Global Integrated Services Limited, we prioritize our clients' requirements by ensuring that all our agricultural products come with comprehensive certifications, including detailed analysis reports. This commitment underscores our dedication to quality assurance and compliance within the agricultural sector.
-</p>
-<p>
-The Certificate of Analysis serves as a critical document that verifies the quality, composition, and safety of our agricultural products. We collaborate with reputable laboratories and regulatory authorities to ensure that our products meet both national and international standards. This includes adhering to relevant guidelines from agricultural and quality assurance bodies, helping us maintain integrity and compliance in global trade.
-</p>  
+            This ensures full compliance, traceability, and confidence for global buyers.
+          </p>
         </div>
       </div>
       <AdditionalSections /> {/* Ensure this component is defined */}
@@ -35,8 +30,13 @@ The Certificate of Analysis serves as a critical document that verifies the qual
 const HeroSection = () => (
   <section className="hero-section">
     <div className="hero-image-container">
-      <img src="/Ourcommitment.ico" alt="Agricultural Commodities" className="hero-image" />
+      <img
+        src="/Ourcommitment.ico"
+        alt="agricultural export compliance Nigeria laboratory testing"
+        className="hero-image"
+      />
       <div className="hero-overlay">
+        <h2>Our Commitment</h2>
       </div>
     </div>
   </section>

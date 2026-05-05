@@ -47,12 +47,40 @@ const Aboutus = () => {
             manufacturers worldwide.
           </p>
 
+          <h3>Who We Are</h3>
+          <p>
+            Welcome to Khadesh Global, a Nigerian-based company established in 2022. We specialize in agricultural
+            commodity sourcing and export, project management consulting, and business support services across Nigeria
+            and international markets.
+          </p>
+          <p>
+            Khadesh Global is a dynamic and forward-thinking company focused on connecting Nigeria’s agricultural value
+            chain to global markets while providing structured project management and business support services.
+          </p>
+          <p>
+            We operate across key sectors including agricultural commodity sourcing and export, project management
+            consulting, and business and trade facilitation services.
+          </p>
+
+          <h3>Our Presence</h3>
+          <p>
+            Khadesh Global is headquartered in Nigeria, with partnerships and operations across West Africa and global
+            commodity markets.
+          </p>
+
+          <h3>Our Commitment</h3>
+          <p>
+            We are committed to quality and consistency, transparent and ethical sourcing, reliable supply chain
+            operations, professional project execution, and long-term partnerships with clients and stakeholders.
+          </p>
+
           <h3>Contact</h3>
           <p>
             For enquiries, partnerships, or business opportunities:
             <br />
             <a href="mailto:khadeshglobalintegratedservice@gmail.com">khadeshglobalintegratedservice@gmail.com</a>
           </p>
+          <p>We respond promptly and look forward to working with you.</p>
         </div>
       </div>
       <AdditionalSections /> {/* Ensure this component is defined */}
