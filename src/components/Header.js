@@ -28,14 +28,23 @@ const navItems = [
 export default function Header({ isDarkTheme, onToggleTheme }) {
   const theme = useTheme();
   const location = useLocation();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  // Treat laptop widths as "compact" to avoid nav items wrapping/scattering.
+  const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
+  const isWideDesktop = useMediaQuery(theme.breakpoints.up("xl"));
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [moreAnchorEl, setMoreAnchorEl] = React.useState(null);
 
   const handleOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+  const handleMoreOpen = (event) => {
+    setMoreAnchorEl(event.currentTarget);
+  };
+  const handleMoreClose = () => {
+    setMoreAnchorEl(null);
   };
 
   const isActiveItem = (to) => {
@@ -47,8 +56,23 @@ export default function Header({ isDarkTheme, onToggleTheme }) {
 
   const handleNavSelect = () => {
     handleClose();
+    handleMoreClose();
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const primaryNavItems = [
+    { label: "Home", to: "/" },
+    { label: "Project Management", to: "/project-management" },
+    { label: "Commodities", to: "/commodities" },
+    { label: "About us", to: "/about-us" },
+    { label: "Contact Us", to: "/contact-us" },
+  ];
+
+  const secondaryNavItems = navItems.filter(
+    (item) => !primaryNavItems.some((primaryItem) => primaryItem.to === item.to)
+  );
+
+  const isSecondaryActive = secondaryNavItems.some((item) => isActiveItem(item.to));
 
   return (
     <AppBar
@@ -165,7 +189,7 @@ export default function Header({ isDarkTheme, onToggleTheme }) {
           </Box>
         ) : (
           <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-            {navItems.map((item) => (
+            {(isWideDesktop ? navItems : primaryNavItems).map((item) => (
               <Button
                 key={item.to}
                 component={NavLink}
@@ -173,10 +197,11 @@ export default function Header({ isDarkTheme, onToggleTheme }) {
                 onClick={handleNavSelect}
                 sx={{
                   textTransform: "none",
-                  px: 1.5,
-                  py: 0.7,
+                  px: { lg: 1.1, xl: 1.5 },
+                  py: 0.65,
                   borderRadius: 999,
                   fontWeight: 600,
+                  fontSize: { lg: "0.9rem", xl: "0.95rem" },
                   color: "#0a214e",
                   border: "1px solid transparent",
                   transition: "all 0.2s ease",
@@ -195,6 +220,64 @@ export default function Header({ isDarkTheme, onToggleTheme }) {
                 {item.label}
               </Button>
             ))}
+
+            {!isWideDesktop ? (
+              <>
+                <Button
+                  onClick={handleMoreOpen}
+                  aria-controls="desktop-more-menu"
+                  aria-haspopup="menu"
+                  aria-expanded={Boolean(moreAnchorEl)}
+                  sx={{
+                    textTransform: "none",
+                    px: { lg: 1.1, xl: 1.5 },
+                    py: 0.65,
+                    borderRadius: 999,
+                    fontWeight: 600,
+                    fontSize: { lg: "0.9rem", xl: "0.95rem" },
+                    color: "#0a214e",
+                    border: "1px solid transparent",
+                    bgcolor: isSecondaryActive ? "rgba(246, 160, 0, 0.25)" : "transparent",
+                    transition: "all 0.2s ease",
+                    "&:hover": {
+                      bgcolor: "rgba(246, 160, 0, 0.2)",
+                      borderColor: "rgba(246, 160, 0, 0.76)",
+                      transform: "translateY(-1px)",
+                    },
+                  }}
+                >
+                  More
+                </Button>
+                <Menu
+                  id="desktop-more-menu"
+                  anchorEl={moreAnchorEl}
+                  open={Boolean(moreAnchorEl)}
+                  onClose={handleMoreClose}
+                  keepMounted
+                  PaperProps={{
+                    sx: isDarkTheme
+                      ? {
+                          bgcolor: "#10233c",
+                          color: "#e7f0ff",
+                          border: "1px solid #35527a",
+                        }
+                      : undefined,
+                  }}
+                >
+                  {secondaryNavItems.map((item) => (
+                    <MenuItem
+                      key={item.to}
+                      component={RouterLink}
+                      to={item.to}
+                      onClick={handleNavSelect}
+                      selected={isActiveItem(item.to)}
+                    >
+                      {item.label}
+                    </MenuItem>
+                  ))}
+                </Menu>
+              </>
+            ) : null}
             <IconButton
               color="inherit"
               onClick={onToggleTheme}
