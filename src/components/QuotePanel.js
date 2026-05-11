@@ -1,5 +1,13 @@
 import React from "react";
 
+const normalizePathname = (pathname) => {
+  const raw = (pathname || "/").toString();
+  const withoutQueryOrHash = raw.split("?")[0].split("#")[0];
+  const lowercased = withoutQueryOrHash.toLowerCase();
+  if (lowercased.length > 1) return lowercased.replace(/\/+$/, "");
+  return lowercased;
+};
+
 const QUOTE_BY_PATH = {
   "/": "We move value across borders with discipline, trust, and speed.",
   "/project-management": "Execution quality is not accidental; it is engineered.",
@@ -18,7 +26,7 @@ const QUOTE_BY_PATH = {
 };
 
 export default function QuotePanel({ pathname }) {
-  const key = pathname.toLowerCase();
+  const key = normalizePathname(pathname);
   const quote = QUOTE_BY_PATH[key] || QUOTE_BY_PATH["/"];
 
   return (

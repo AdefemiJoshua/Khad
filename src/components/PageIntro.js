@@ -1,5 +1,13 @@
 import React from "react";
 
+const normalizePathname = (pathname) => {
+  const raw = (pathname || "/").toString();
+  const withoutQueryOrHash = raw.split("?")[0].split("#")[0];
+  const lowercased = withoutQueryOrHash.toLowerCase();
+  if (lowercased.length > 1) return lowercased.replace(/\/+$/, "");
+  return lowercased;
+};
+
 const INTRO_BY_PATH = {
   "/": {
     title: "Cultivating Trust, Exporting Excellence",
@@ -79,7 +87,7 @@ const INTRO_BY_PATH = {
 };
 
 export default function PageIntro({ pathname }) {
-  const key = pathname.toLowerCase();
+  const key = normalizePathname(pathname);
   const intro = INTRO_BY_PATH[key] || INTRO_BY_PATH["/"];
 
   return (

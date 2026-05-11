@@ -18,21 +18,19 @@ const WHATSAPP_BASE = "https://wa.me/+2348069081589";
 const ARTICLES = {
   "shea-butter": {
     label: "Shea Butter",
-    heading: "SHEA BUTTER, SHEA NUTS",
-    title: "Shea Butter: Complete Guide on Import/Export From Nigeria & Africa",
+    heading: "SHEA BUTTER",
+    title: "Shea Butter Export from Nigeria (Vitellaria paradoxa)",
     heroImage: sheaButterHeroImage,
     image: sheaButterImage,
     intro: [
-      "The Shea tree is a perennial crop predominantly found in West and East Africa. A Shea tree usually takes 11 to 15 years before it starts bearing fruits, and it can remain productive for more than 200 years.",
-      "The fruit is typically around 5 cm long and 3-4 cm wide. It is elliptic and yellow or green with a thick butter-like material. The mucous pericarp contains a seed that is oval or round in shape.",
-      "The seed has a big oily nut from which Shea Butter is extracted. The nut goes through crushing, roasting, grinding, and separation. The resulting paste is kneaded with water so the butter oil rises to the surface.",
-      "Raw or unrefined Shea Butter is commonly yellow. After further refining, it can become white. Shea butter is triglyceride in nature.",
-      "Local women are a critical part of the shea butter value chain. In recent years, there has also been growing mechanization to support higher supply and stronger standardization."
+      "Khadesh Global supplies export-ready shea butter sourced through trusted networks in Nigeria, supporting reliable bulk supply for international buyers.",
+      "Shea butter is derived from the nut of the shea tree (Vitellaria paradoxa) and is widely traded as a natural fat for cosmetics, personal care, and industrial applications.",
+      "We focus on quality control, proper handling, and export documentation support to ensure consistent specifications for global markets."
     ],
     usedFor: [
-      "Shea butter is used mainly in the food industry (especially confectionery and beverages) and is widely used as a cocoa butter substitute.",
-      "It is edible and increasingly used in cooking.",
-      "It is also used in cosmetics and personal care products such as:",
+      "Shea butter is used across cosmetics, personal care, and industrial manufacturing due to its emollient properties and stable fat profile.",
+      "It is also used as an ingredient in select food applications depending on buyer specification and compliance requirements.",
+      "Common cosmetic and personal care applications include:",
     ],
     cosmeticUses: [
       "Skin and hair moisturizing creams",
@@ -94,7 +92,7 @@ const ARTICLES = {
       "Common trade terms include FOB and CIF depending on control and logistics capability."
     ],
     pricingNote:
-      "As of July 2022, Grade A (unrefined) Shea Butter was quoted around $2,200-$2,600 per metric ton in international markets ($2.2-$2.6/kg).",
+      "Pricing depends on grade, specification, packaging, volume, and delivery terms (FOB/CIF).",
     tradeSpecs: [
       "Origin: Nigeria",
       "Product Type: Shea Butter",
@@ -125,13 +123,12 @@ const ARTICLES = {
   "sesame-seeds": {
     label: "Sesame Seeds",
     heading: "SESAME SEEDS",
-    title: "Sesamum indicum",
+    title: "Sesame Seeds Export from Nigeria (Sesamum indicum)",
     image: sesameSeedsImage,
     intro: [
-      "Sesame seeds are extracted from the Sesamum indicum plant. They are pale yellow to golden brown with a nutty taste.",
-      "We provide Hulled Sesame Seeds (seeds with the tough husk removed) for versatility and convenience.",
-      "These little seeds are fantastic at relieving joint pain, balancing blood sugar, reducing the risk of diabetes and lowering cholesterol.",
-      "They contain niacin, B6, protein, and folate and are packed with antioxidants."
+      "Khadesh Global supplies and exports clean, export-grade sesame seeds (Sesamum indicum) sourced from trusted Nigerian farmers and aggregators.",
+      "We support bulk buyers with consistent quality, proper cleaning and sorting, and reliable supply for international food manufacturing and trading markets.",
+      "Sesame seeds are valued for their oil content, nutty taste, and wide range of applications including tahini production, bakery use, and edible oil extraction."
     ],
     waysToUse: [
       "Bake into bread: Sesame seed bread is nutritious and rich in B vitamins and antioxidants.",
@@ -504,7 +501,7 @@ export default function CommodityArticlePage() {
         <div className={styles.layout}>
           <main className={styles.mainContent}>
             <section className={styles.section}>
-              <h3>What is {article.label}?</h3>
+              <h3>Khadesh Global supplies and exports {article.label}.</h3>
               {article.intro.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}

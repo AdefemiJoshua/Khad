@@ -59,7 +59,10 @@ const Commodities = () => {
         <div id="agriculturalCommoditiesSection" className={styles.agriculturalCommoditiesSection}>
           <h2 className={styles.agriculturalCommoditiesTitle}>Agricultural Commodities</h2>
           <p className={styles.agriculturalCommoditiesIntro}>
-          We carefully choose our agricultural commodities from the best and most respected suppliers across the globe to fulfil the constantly changing demands of the global market. We guarantee that each product we sell satisfies the highest requirements by collaborating with reliable suppliers who place a premium on sustainability and quality. This pledge upholds our commitment to sustainable practices and ensures high quality. It also helps us build enduring connections with producers that share our principles of ethical sourcing and environmental responsibility. Delivering quality from farm to market, our strategic approach positions us as a dependable partner in the global agricultural commodities market.
+          We supply high-quality agricultural commodities from Nigeria, including ginger, hibiscus flowers, sesame seeds, and
+          other export-ready products, sourced directly from trusted Nigerian farmers and aggregators to meet international
+          market standards. We ensure consistent quality, proper handling, and reliable supply for importers, distributors,
+          and manufacturers across global markets.
 </p>
           <div className={styles.commodityCards}>
             {commodityCards.map((commodity) => (

@@ -1,5 +1,3 @@
-const TARGET_MARKETS = "Nigeria, UK, EU, USA";
-
 const COMMODITY_SEO = {
   "dried-ginger": {
     name: "Dried Split Ginger",
@@ -9,15 +7,17 @@ const COMMODITY_SEO = {
     keywords:
       "ginger export Nigeria, dried split ginger, zingiber officinale, ginger supplier, agricultural export company Nigeria",
     category: "Agricultural Commodity",
+    imageAlt: "ginger export Nigeria dried split ginger",
   },
   "shea-butter": {
     name: "Shea Butter",
-    title: "Shea Butter Exporter (Nigeria) | Khadesh Global",
+    title: "shea butter export Nigeria | Khadesh Global Premium Supply",
     description:
-      `Export and supply of shea butter from Nigeria to ${TARGET_MARKETS}. Trusted sourcing, export documentation support, and consistent quality.`,
+      "shea butter export Nigeria supplying quality-checked shea butter for cosmetics, personal care, and industrial use across global markets.",
     keywords:
-      "shea butter exporter, shea nuts, shea butter export Nigeria, cosmetic grade shea butter, agricultural commodities exporter",
+      "shea butter export Nigeria, shea butter supplier Nigeria, vitellaria paradoxa, cosmetic grade shea butter, agricultural export company Nigeria",
     category: "Agricultural Commodity",
+    imageAlt: "shea butter export Nigeria",
   },
   "processed-cashew-nuts-w240-w320": {
     name: "Processed Cashew Nuts (W240, W320)",
@@ -27,6 +27,7 @@ const COMMODITY_SEO = {
     keywords:
       "cashew nuts export Nigeria, cashew kernels W240, cashew kernels W320, cashew supplier Nigeria, agricultural export",
     category: "Agricultural Commodity",
+    imageAlt: "cashew nuts export Nigeria kernel grading",
   },
   "soya-beans": {
     name: "Soya Beans (Soybean)",
@@ -36,6 +37,7 @@ const COMMODITY_SEO = {
     keywords:
       "soybean export Nigeria, soya beans exporter, glycine max, soybean supplier, agricultural export company Nigeria",
     category: "Agricultural Commodity",
+    imageAlt: "soybean export Nigeria yellow soybeans",
   },
   "sesame-seeds": {
     name: "Sesame Seeds",
@@ -45,6 +47,7 @@ const COMMODITY_SEO = {
     keywords:
       "sesame seeds export Nigeria, sesamum indicum, cleaned sesame seeds, sesame supplier Nigeria, agricultural export",
     category: "Agricultural Commodity",
+    imageAlt: "sesame seeds export Nigeria cleaned seeds",
   },
   "dried-hibiscus-flower": {
     name: "Dried Hibiscus Flower",
@@ -54,6 +57,7 @@ const COMMODITY_SEO = {
     keywords:
       "hibiscus flower export Nigeria, dried hibiscus flower, hibiscus sabdariffa, sun dried calyces, agricultural export",
     category: "Agricultural Commodity",
+    imageAlt: "hibiscus flower export Nigeria sun dried calyces",
   },
 };
 

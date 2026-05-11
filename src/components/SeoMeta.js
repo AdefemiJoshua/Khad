@@ -2,6 +2,14 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import { getCommoditySeo } from "../seo/commoditySeo";
 
+const normalizePathname = (pathname) => {
+  const raw = (pathname || "/").toString();
+  const withoutQueryOrHash = raw.split("?")[0].split("#")[0];
+  const lowercased = withoutQueryOrHash.toLowerCase();
+  if (lowercased.length > 1) return lowercased.replace(/\/+$/, "");
+  return lowercased;
+};
+
 const DEFAULT_META = {
   title: "Khadesh Global | Agricultural Commodities Export and Supply",
   description:
@@ -9,6 +17,7 @@ const DEFAULT_META = {
   keywords:
     "agricultural commodities, commodity export, Nigeria agricultural export, shea butter export, sesame seeds export, soybean export, dried hibiscus export, dried ginger export",
   image: "/main-logo-512.png",
+  imageAlt: "Khadesh Global logo",
 };
 
 const ROUTE_META = {
@@ -18,12 +27,14 @@ const ROUTE_META = {
       "Khadesh Global exports agricultural commodities from Nigeria and Africa to global buyers with quality assurance and reliable delivery.",
     keywords:
       "agricultural commodities, agricultural commodities exporter, Nigeria commodity export, Africa commodity supplier",
+    imageAlt: "Agricultural commodities exporter in Nigeria",
   },
   "/project-management": {
     title: "project management consulting Nigeria | Khadesh Global Services",
     description:
       "project management consulting Nigeria supporting agribusiness, government, manufacturing, and NGO projects.",
     keywords: "project management consulting Nigeria, project planning execution, logistics supply chain management",
+    imageAlt: "project management consulting Nigeria agribusiness planning",
   },
   "/commodities": {
     title: "Agricultural Commodities Portfolio | Khadesh Global",
@@ -31,80 +42,99 @@ const ROUTE_META = {
       "Browse Khadesh Global's agricultural commodities including shea butter, sesame seeds, soya beans, dried hibiscus flower, dried ginger, and cashew nuts.",
     keywords:
       "agricultural commodities list, shea butter export, sesame seeds supplier, soybean exporter, dried hibiscus exporter, dried ginger supplier, cashew nuts w240 w320",
+    imageAlt: "Agricultural commodities sourced from Nigeria",
   },
   "/our-agents": {
     title: "commodity trading agents Nigeria | Khadesh Global Agent Program",
     description:
       "commodity trading agents Nigeria offering commission-based opportunities in agricultural trade facilitation.",
     keywords: "commodity trading agents Nigeria, agricultural trade agents, commodity brokers Nigeria",
+    imageAlt: "commodity trading agents Nigeria business network",
   },
   "/our-strategy": {
     title: "agricultural supply chain Nigeria | Khadesh Global Strategy",
     description:
       "agricultural supply chain Nigeria integrating farmers, logistics, and buyers into a structured commodity trade system.",
     keywords: "agricultural supply chain Nigeria, farm to export logistics, commodity sourcing strategy",
+    imageAlt: "agricultural supply chain Nigeria farm to export system",
   },
   "/sustainability": {
     title: "sustainable agriculture Nigeria | Khadesh Global Sustainability",
     description:
       "sustainable agriculture Nigeria promoting ethical sourcing, environmental responsibility, and smallholder farmer inclusion.",
     keywords: "sustainable agriculture Nigeria, responsible sourcing, ethical supply chain, smallholder farmers",
+    imageAlt: "sustainable agriculture Nigeria smallholder farming practices",
   },
   "/quality-assurance-compliance": {
     title: "agricultural export compliance Nigeria | Khadesh Global QA",
     description:
       "agricultural export compliance Nigeria ensuring food safety, certification, testing, and traceability for global trade.",
     keywords: "agricultural export compliance Nigeria, HACCP, traceability, aflatoxin testing, phytosanitary certificate",
+    imageAlt: "agricultural export compliance Nigeria laboratory testing",
   },
   "/about-us": {
     title: "agricultural export company Nigeria | About Khadesh Global",
     description:
       "agricultural export company Nigeria specializing in sourcing from smallholder farmers and delivering agricultural commodities to global markets with project management support.",
     keywords: "agricultural export company Nigeria, commodity export Nigeria, supply chain management, quality control",
+    imageAlt: "agricultural export company Nigeria sourcing from smallholder farmers",
   },
   "/our-mission": {
     title: "agricultural sourcing Nigeria | Khadesh Global Mission",
     description:
       "agricultural sourcing Nigeria focused on ethical sourcing, delivery, and project management solutions across global markets.",
     keywords: "agricultural sourcing Nigeria, ethical sourcing, commodity export mission, project management support",
+    imageAlt: "agricultural sourcing Nigeria smallholder farmers",
   },
   "/our-vision": {
     title: "agricultural trade company Nigeria | Khadesh Global Vision",
     description:
       "agricultural trade company Nigeria focused on connecting farmers to global markets through trusted trade and project management solutions.",
     keywords: "agricultural trade company Nigeria, global commodity trade, trusted supply, project management",
+    imageAlt: "agricultural trade company Nigeria global market connection",
   },
   "/our-commitment": {
     title: "Our Commitment | Khadesh Global",
     description:
       "See how Khadesh Global maintains quality, integrity, and consistent stakeholder value.",
+    keywords:
+      "Khadesh Global commitment, quality assurance, ethical sourcing, export compliance Nigeria, traceability",
+    imageAlt: "agricultural export compliance Nigeria quality commitment",
   },
   "/our-partners": {
     title: "commodity trading partners Nigeria | Khadesh Global Collaboration",
     description:
       "commodity trading partners Nigeria building long-term supply chain partnerships across agricultural markets.",
     keywords: "commodity trading partners Nigeria, logistics partners, warehousing partners, aggregation partners",
+    imageAlt: "commodity trading partners Nigeria supply chain",
   },
   "/our-value-proposition": {
     title: "Our Value Proposition | Khadesh Global",
     description:
       "Understand the operational strengths and value proposition that differentiate Khadesh Global.",
+    keywords:
+      "agricultural export company Nigeria, commodity sourcing, export logistics, quality control, project management support",
+    imageAlt: "agricultural export company Nigeria value proposition",
   },
   "/contact-us": {
     title: "Contact Us | Khadesh Global",
     description:
       "Contact Khadesh Global for inquiries, partnerships, commodity requests, and project support.",
+    keywords:
+      "contact Khadesh Global, agricultural export company Nigeria contact, commodity export inquiry, project management inquiry",
+    imageAlt: "contact agricultural export company Nigeria",
   },
   "/local-supply": {
     title: "local agricultural supply Nigeria | Khadesh Global Network",
     description:
       "local agricultural supply Nigeria connecting farmers and buyers through structured domestic commodity distribution systems.",
     keywords: "local agricultural supply Nigeria, commodity distribution, aggregation, local buyers, Nigeria markets",
+    imageAlt: "local agricultural supply Nigeria market distribution",
   },
 };
 
 export default function SeoMeta({ pathname }) {
-  const normalizedPath = (pathname || "/").toLowerCase();
+  const normalizedPath = normalizePathname(pathname);
   const routeMeta = ROUTE_META[normalizedPath] || {};
   const commoditySlug = normalizedPath.startsWith("/commodities/")
     ? normalizedPath.split("/")[2]
@@ -116,7 +146,7 @@ export default function SeoMeta({ pathname }) {
     typeof window !== "undefined" && window.location && window.location.origin
       ? window.location.origin
       : "";
-  const canonicalUrl = `${origin}${pathname || "/"}`;
+  const canonicalUrl = `${origin}${normalizedPath || "/"}`;
   const isCommodityArticle = normalizedPath.startsWith("/commodities/");
   const ogType = isCommodityArticle ? "article" : "website";
 
@@ -191,12 +221,16 @@ export default function SeoMeta({ pathname }) {
       <meta property="og:site_name" content="Khadesh Global" />
       <meta property="og:locale" content="en_NG" />
       {imageUrl ? <meta property="og:image" content={imageUrl} /> : null}
+      {imageUrl && meta.imageAlt ? <meta property="og:image:alt" content={meta.imageAlt} /> : null}
       <meta property="og:url" content={canonicalUrl} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={meta.title} />
       <meta name="twitter:description" content={meta.description} />
       {imageUrl ? <meta name="twitter:image" content={imageUrl} /> : null}
+      {imageUrl && meta.imageAlt ? (
+        <meta name="twitter:image:alt" content={meta.imageAlt} />
+      ) : null}
       <meta name="twitter:url" content={canonicalUrl} />
       <meta name="twitter:site" content="@khadeshglobal" />
       <meta name="twitter:creator" content="@khadeshglobal" />
